@@ -1,0 +1,2297 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>艺舞吧 - 舞蹈影像社区 | 原创高清作品与创作者聚集地</title>
+<meta name="description" content="艺舞吧官方网站，专注舞蹈影像内容的视频品牌社区，汇聚原创高清舞作、创作者与舞蹈爱好者，提供精品内容、专题企划与持续运营的内容生态。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231b1f3b'/%3E%3Ccircle cx='26' cy='39' r='8' fill='%23ff5a5f'/%3E%3Cpath d='M34 12 L50 22 L34 34 Z' fill='%23ffc94d'/%3E%3Cpath d='M18 14 q10 8 6 18 q8 6 4 16' stroke='%238ee6ff' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ywb-ink:#161a2e;
+  --ywb-ink-soft:#2a3050;
+  --ywb-cream:#f7f4ee;
+  --ywb-card:#ffffff;
+  --ywb-red:#ff5a5f;
+  --ywb-yellow:#ffc94d;
+  --ywb-cyan:#2ec5d4;
+  --ywb-violet:#7b6cf6;
+  --ywb-line:#e6e1d8;
+  --ywb-text:#2b2f42;
+  --ywb-muted:#6d7288;
+  --ywb-radius:18px;
+  --ywb-shadow:0 10px 30px rgba(22,26,46,.08);
+  --ywb-shadow-lg:0 18px 50px rgba(22,26,46,.14);
+  --ywb-header-h:66px;
+  --ywb-anno-h:38px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  color:var(--ywb-text);
+  background:var(--ywb-cream);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+ul{list-style:none}
+section{scroll-margin-top:calc(var(--ywb-anno-h) + var(--ywb-header-h) + 12px)}
+
+/* ============ 吸顶容器 ============ */
+.ywb-sticky-shell{
+  position:sticky;top:0;z-index:120;
+}
+/* 公告条 */
+.ywb-anno{
+  height:var(--ywb-anno-h);
+  background:linear-gradient(90deg,#1b1f3b,#2b2c5c 55%,#3a2a5e);
+  color:#f2f0ff;
+  display:flex;align-items:center;
+  overflow:hidden;
+  font-size:13px;
+  letter-spacing:.2px;
+}
+.ywb-anno__inner{
+  width:100%;max-width:1240px;margin:0 auto;padding:0 20px;
+  display:flex;align-items:center;gap:12px;
+}
+.ywb-anno__badge{
+  flex:none;
+  background:var(--ywb-red);
+  color:#fff;
+  font-size:11px;font-weight:700;
+  padding:2px 9px;border-radius:999px;
+  letter-spacing:1px;
+}
+.ywb-anno__marquee{
+  flex:1;overflow:hidden;white-space:nowrap;
+}
+.ywb-anno__track{
+  display:inline-flex;gap:46px;
+  animation:ywb-marquee 30s linear infinite;
+  padding-left:100%;
+}
+.ywb-anno__track span{opacity:.92}
+.ywb-anno__track b{color:var(--ywb-yellow);font-weight:600}
+@keyframes ywb-marquee{
+  from{transform:translateX(0)}
+  to{transform:translateX(-100%)}
+}
+/* 页头 */
+.ywb-header{
+  height:var(--ywb-header-h);
+  background:rgba(247,244,238,.93);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--ywb-line);
+}
+.ywb-header__inner{
+  max-width:1240px;margin:0 auto;padding:0 20px;
+  height:100%;
+  display:flex;align-items:center;gap:20px;
+}
+.ywb-logo{display:flex;align-items:center;gap:10px;flex:none}
+.ywb-logo__mark{
+  width:38px;height:38px;border-radius:11px;
+  background:linear-gradient(135deg,#1b1f3b,#3b2f6e);
+  display:grid;place-items:center;
+  position:relative;
+}
+.ywb-logo__mark::before{
+  content:"";width:12px;height:12px;border-radius:50%;
+  background:var(--ywb-red);
+  position:absolute;left:9px;bottom:9px;
+}
+.ywb-logo__mark::after{
+  content:"";width:0;height:0;
+  border-left:11px solid var(--ywb-yellow);
+  border-top:7px solid transparent;
+  border-bottom:7px solid transparent;
+  position:absolute;right:7px;top:8px;
+}
+.ywb-logo__text{display:flex;flex-direction:column;line-height:1.15}
+.ywb-logo__name{font-size:18px;font-weight:800;letter-spacing:1px;color:var(--ywb-ink)}
+.ywb-logo__sub{font-size:10px;color:var(--ywb-muted);letter-spacing:2.5px}
+.ywb-nav{flex:1;display:flex;justify-content:center}
+.ywb-nav ul{display:flex;gap:4px;flex-wrap:wrap}
+.ywb-nav a{
+  display:block;padding:7px 13px;border-radius:999px;
+  font-size:14px;color:var(--ywb-ink-soft);font-weight:500;
+  transition:.22s;
+}
+.ywb-nav a:hover,.ywb-nav a:focus-visible{background:var(--ywb-ink);color:#fff;outline:none}
+.ywb-header__tools{display:flex;align-items:center;gap:10px;flex:none}
+.ywb-search{position:relative}
+.ywb-search input{
+  width:180px;height:36px;
+  border:1px solid var(--ywb-line);
+  background:#fff;border-radius:999px;
+  padding:0 36px 0 15px;
+  font-size:13px;color:var(--ywb-text);
+  transition:.25s;
+}
+.ywb-search input:focus{
+  outline:none;width:230px;
+  border-color:var(--ywb-cyan);
+  box-shadow:0 0 0 4px rgba(46,197,212,.15);
+}
+.ywb-search__btn{
+  position:absolute;right:4px;top:50%;transform:translateY(-50%);
+  width:28px;height:28px;border-radius:50%;
+  display:grid;place-items:center;color:var(--ywb-muted);
+}
+.ywb-search__btn:hover{background:var(--ywb-cream);color:var(--ywb-ink)}
+.ywb-search__tip{
+  position:absolute;top:44px;right:0;
+  background:#fff;border:1px solid var(--ywb-line);
+  border-radius:12px;box-shadow:var(--ywb-shadow);
+  font-size:12px;color:var(--ywb-muted);
+  padding:8px 14px;
+  display:none;white-space:nowrap;
+}
+.ywb-search__tip.is-on{display:block}
+.ywb-btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:7px;
+  padding:10px 20px;border-radius:999px;
+  font-size:14px;font-weight:600;
+  transition:.25s;
+}
+.ywb-btn--primary{background:var(--ywb-ink);color:#fff}
+.ywb-btn--primary:hover{background:var(--ywb-red);transform:translateY(-2px);box-shadow:0 8px 20px rgba(255,90,95,.3)}
+.ywb-btn--ghost{border:1px solid var(--ywb-line);background:#fff;color:var(--ywb-ink)}
+.ywb-btn--ghost:hover{border-color:var(--ywb-ink);transform:translateY(-2px)}
+.ywb-btn--sm{padding:6px 14px;font-size:13px}
+.ywb-nav-toggle{
+  display:none;width:40px;height:38px;border-radius:10px;
+  border:1px solid var(--ywb-line);background:#fff;
+  place-items:center;
+}
+.ywb-nav-toggle span{display:block;width:17px;height:2px;background:var(--ywb-ink);border-radius:2px;position:relative}
+.ywb-nav-toggle span::before,.ywb-nav-toggle span::after{
+  content:"";position:absolute;left:0;width:17px;height:2px;background:var(--ywb-ink);border-radius:2px;
+}
+.ywb-nav-toggle span::before{top:-5px}
+.ywb-nav-toggle span::after{top:5px}
+
+/* ============ 布局 ============ */
+.ywb-wrap{max-width:1240px;margin:0 auto;padding:0 20px}
+.ywb-section{padding:64px 0}
+.ywb-section--alt{background:#fff}
+.ywb-sec-head{
+  display:flex;align-items:flex-end;justify-content:space-between;
+  gap:20px;margin-bottom:34px;flex-wrap:wrap;
+}
+.ywb-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12px;font-weight:700;letter-spacing:2.5px;
+  color:var(--ywb-red);text-transform:uppercase;
+  margin-bottom:8px;
+}
+.ywb-eyebrow::before{content:"";width:20px;height:2px;background:var(--ywb-red);border-radius:2px}
+.ywb-sec-title{font-size:clamp(22px,3vw,32px);font-weight:800;color:var(--ywb-ink);letter-spacing:.5px;line-height:1.3}
+.ywb-sec-desc{font-size:14px;color:var(--ywb-muted);max-width:560px;margin-top:8px}
+.ywb-link-more{font-size:14px;font-weight:600;color:var(--ywb-ink);display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+.ywb-link-more:hover{color:var(--ywb-red)}
+.ywb-link-more::after{content:"→";transition:.2s}
+.ywb-link-more:hover::after{transform:translateX(4px)}
+
+/* ============ 首屏 ============ */
+.ywb-hero{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(900px 420px at 88% -10%,rgba(123,108,246,.32),transparent 70%),
+    radial-gradient(700px 380px at 4% 110%,rgba(46,197,212,.25),transparent 70%),
+    linear-gradient(160deg,#171a30,#23264a 58%,#2f2350);
+  color:#fff;
+  padding:70px 0 80px;
+}
+.ywb-hero::after{
+  content:"";position:absolute;inset:0;
+  background-image:radial-gradient(rgba(255,255,255,.08) 1px,transparent 1px);
+  background-size:26px 26px;
+  opacity:.55;pointer-events:none;
+}
+.ywb-hero__grid{
+  position:relative;z-index:2;
+  display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;
+}
+.ywb-hero__badge{
+  display:inline-flex;align-items:center;gap:9px;
+  padding:6px 15px;border-radius:999px;
+  background:rgba(255,255,255,.1);
+  border:1px solid rgba(255,255,255,.2);
+  font-size:12.5px;letter-spacing:1px;
+  margin-bottom:20px;
+}
+.ywb-hero__badge i{width:7px;height:7px;border-radius:50%;background:var(--ywb-yellow);box-shadow:0 0 0 4px rgba(255,201,77,.2)}
+.ywb-hero h1{
+  font-size:clamp(38px,5.6vw,64px);
+  font-weight:900;line-height:1.1;letter-spacing:2px;
+  margin-bottom:18px;
+}
+.ywb-hero h1 em{
+  font-style:normal;
+  background:linear-gradient(100deg,var(--ywb-yellow),var(--ywb-red) 60%,var(--ywb-violet));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.ywb-hero__slogan{
+  font-size:clamp(16px,1.9vw,20px);
+  font-weight:600;letter-spacing:1px;color:#e9e6ff;
+  margin-bottom:18px;
+}
+.ywb-hero__intro{
+  font-size:14.5px;line-height:1.95;color:rgba(240,239,255,.8);
+  max-width:560px;margin-bottom:26px;
+}
+.ywb-hero__actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:34px}
+.ywb-hero .ywb-btn--primary{background:var(--ywb-red);color:#fff}
+.ywb-hero .ywb-btn--primary:hover{background:#ff7378}
+.ywb-hero .ywb-btn--ghost{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.28);color:#fff}
+.ywb-hero .ywb-btn--ghost:hover{border-color:#fff;background:rgba(255,255,255,.16)}
+.ywb-hero__stats{
+  display:flex;gap:14px;flex-wrap:wrap;
+}
+.ywb-stat{
+  flex:1 1 130px;
+  background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:14px;padding:14px 16px;
+  backdrop-filter:blur(6px);
+}
+.ywb-stat__num{font-size:26px;font-weight:800;color:var(--ywb-yellow);line-height:1.2;letter-spacing:.5px}
+.ywb-stat__num small{font-size:13px;font-weight:600;margin-left:2px;color:#fff}
+.ywb-stat__label{font-size:12px;color:rgba(240,239,255,.7);letter-spacing:1px}
+
+/* 首屏视觉拼贴 */
+.ywb-hero__visual{position:relative;min-height:420px}
+.ywb-hero__stage{
+  position:relative;border-radius:24px;overflow:hidden;
+  box-shadow:0 30px 70px rgba(0,0,0,.45);
+  border:1px solid rgba(255,255,255,.14);
+  aspect-ratio:4/3.4;
+}
+.ywb-hero__stage img{width:100%;height:100%;object-fit:cover}
+.ywb-hero__float{
+  position:absolute;background:rgba(20,22,40,.78);
+  border:1px solid rgba(255,255,255,.16);
+  border-radius:14px;padding:10px 14px;
+  backdrop-filter:blur(10px);
+  font-size:12px;line-height:1.5;
+  box-shadow:0 12px 30px rgba(0,0,0,.35);
+}
+.ywb-hero__float b{display:block;font-size:13px;color:#fff;margin-bottom:2px}
+.ywb-hero__float span{color:rgba(240,239,255,.68)}
+.ywb-hero__float--a{left:-18px;bottom:34px;animation:ywb-float 5s ease-in-out infinite}
+.ywb-hero__float--b{right:-10px;top:22px;animation:ywb-float 6.5s ease-in-out infinite reverse}
+@keyframes ywb-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.ywb-hero__dots{position:absolute;right:14px;bottom:14px;display:flex;gap:6px}
+.ywb-hero__dots i{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.35)}
+.ywb-hero__dots i:first-child{background:var(--ywb-yellow);width:20px;border-radius:6px}
+
+/* ============ 品牌解析 ============ */
+.ywb-about{background:#fff;border-bottom:1px solid var(--ywb-line)}
+.ywb-about__layout{display:grid;grid-template-columns:1fr 340px;gap:44px;align-items:start}
+.ywb-about__prose p{font-size:15px;line-height:2.05;color:#43485f;margin-bottom:18px;text-align:justify}
+.ywb-about__prose p:last-child{margin-bottom:0}
+.ywb-about__prose strong{color:var(--ywb-ink);font-weight:700}
+.ywb-about__prose .ywb-key{
+  background:linear-gradient(transparent 62%,rgba(255,201,77,.55) 62%);
+  font-weight:600;color:var(--ywb-ink);
+}
+.ywb-about__aside{display:flex;flex-direction:column;gap:16px;position:sticky;top:130px}
+.ywb-pillar{
+  background:var(--ywb-cream);border-radius:16px;padding:18px 20px;
+  border:1px solid var(--ywb-line);
+  transition:.25s;
+}
+.ywb-pillar:hover{transform:translateY(-3px);box-shadow:var(--ywb-shadow);border-color:#d6d0c4}
+.ywb-pillar__icon{font-size:20px;margin-bottom:6px}
+.ywb-pillar h3{font-size:15px;font-weight:700;color:var(--ywb-ink);margin-bottom:4px}
+.ywb-pillar p{font-size:13px;color:var(--ywb-muted);line-height:1.7}
+
+/* ============ 焦点视频 ============ */
+.ywb-feature__grid{display:grid;grid-template-columns:1.35fr 1fr;gap:22px}
+.ywb-feature-main{
+  position:relative;border-radius:var(--ywb-radius);overflow:hidden;
+  background:#0e1122;color:#fff;min-height:400px;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  box-shadow:var(--ywb-shadow-lg);
+  transition:.3s;
+}
+.ywb-feature-main:hover{transform:translateY(-4px);box-shadow:0 26px 60px rgba(22,26,46,.22)}
+.ywb-feature-main img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.92}
+.ywb-feature-main::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(10,12,28,.94) 4%,rgba(10,12,28,.5) 42%,rgba(10,12,28,.06) 78%);
+}
+.ywb-feature-main__body{position:relative;z-index:2;padding:26px 28px}
+.ywb-tag{
+  display:inline-block;padding:3px 11px;border-radius:999px;
+  font-size:11.5px;font-weight:600;letter-spacing:.5px;
+}
+.ywb-tag--live{background:var(--ywb-red);color:#fff}
+.ywb-tag--soft{background:rgba(255,255,255,.16);color:#fff;border:1px solid rgba(255,255,255,.24)}
+.ywb-tag--ink{background:rgba(22,26,46,.07);color:var(--ywb-ink-soft)}
+.ywb-tag--cyan{background:rgba(46,197,212,.16);color:#137d87}
+.ywb-feature-main__meta{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap}
+.ywb-feature-main h3{font-size:clamp(19px,2.4vw,25px);font-weight:800;line-height:1.35;margin-bottom:10px}
+.ywb-feature-main p{font-size:13.5px;line-height:1.7;color:rgba(240,240,255,.78);margin-bottom:14px;max-width:520px}
+.ywb-feature-main__foot{display:flex;align-items:center;gap:14px;font-size:12.5px;color:rgba(240,240,255,.68);flex-wrap:wrap}
+.ywb-play{
+  width:52px;height:52px;border-radius:50%;
+  background:var(--ywb-yellow);color:#1b1f3b;
+  display:grid;place-items:center;font-size:17px;
+  position:absolute;z-index:3;left:28px;top:26px;
+  box-shadow:0 10px 26px rgba(255,201,77,.45);
+  transition:.25s;
+}
+.ywb-feature-main:hover .ywb-play{transform:scale(1.08)}
+.ywb-feature-side{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-content:start}
+.ywb-vcard{
+  background:var(--ywb-card);border-radius:15px;overflow:hidden;
+  border:1px solid var(--ywb-line);
+  display:flex;flex-direction:column;
+  transition:.25s;
+}
+.ywb-vcard:hover{transform:translateY(-4px);box-shadow:var(--ywb-shadow-lg);border-color:#d9d2c4}
+.ywb-vcard__cover{position:relative;aspect-ratio:16/9;overflow:hidden;background:#dfe3ef}
+.ywb-vcard__cover img{width:100%;height:100%;object-fit:cover;transition:.45s}
+.ywb-vcard:hover .ywb-vcard__cover img{transform:scale(1.06)}
+.ywb-vcard__cover .ywb-tag{position:absolute;left:10px;top:10px;z-index:2}
+.ywb-vcard__play{
+  position:absolute;right:10px;bottom:10px;z-index:2;
+  width:32px;height:32px;border-radius:50%;
+  background:rgba(255,255,255,.9);color:var(--ywb-ink);
+  display:grid;place-items:center;font-size:12px;
+  transition:.2s;
+}
+.ywb-vcard:hover .ywb-vcard__play{background:var(--ywb-red);color:#fff}
+.ywb-vcard__body{padding:13px 15px 15px;display:flex;flex-direction:column;flex:1}
+.ywb-vcard h4{font-size:14.5px;font-weight:700;color:var(--ywb-ink);line-height:1.45;margin-bottom:6px}
+.ywb-vcard p{font-size:12.5px;color:var(--ywb-muted);line-height:1.65;flex:1;margin-bottom:10px}
+.ywb-vcard__foot{display:flex;align-items:center;justify-content:space-between;font-size:11.5px;color:var(--ywb-muted);gap:8px}
+.ywb-avatar{
+  width:26px;height:26px;border-radius:50%;flex:none;
+  display:grid;place-items:center;
+  font-size:11px;font-weight:700;color:#fff;
+  letter-spacing:.5px;
+}
+.ywb-vcard__author{display:flex;align-items:center;gap:6px;min-width:0}
+.ywb-vcard__author span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+/* ============ 素材主图容器 ============ */
+.ywb-figure{overflow:hidden;border-radius:var(--ywb-radius);position:relative;background:#e8e4db}
+.ywb-figure img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* ============ 热门视频流 ============ */
+.ywb-stream-bar{
+  display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+  margin-bottom:26px;
+}
+.ywb-filter{
+  padding:7px 16px;border-radius:999px;font-size:13px;font-weight:500;
+  border:1px solid var(--ywb-line);background:#fff;color:var(--ywb-muted);
+  transition:.2s;
+}
+.ywb-filter:hover{border-color:var(--ywb-ink);color:var(--ywb-ink)}
+.ywb-filter.is-active{background:var(--ywb-ink);border-color:var(--ywb-ink);color:#fff}
+.ywb-stream{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.ywb-stream .ywb-vcard__body{padding:15px 17px 17px}
+.ywb-stream .ywb-vcard h4{font-size:15.5px}
+.ywb-stream .ywb-vcard p{font-size:13px}
+.ywb-vcard__actions{display:flex;gap:6px;margin-top:10px}
+.ywb-icon-btn{
+  display:inline-flex;align-items:center;gap:5px;
+  font-size:12px;color:var(--ywb-muted);
+  padding:4px 9px;border-radius:999px;
+  border:1px solid transparent;
+  transition:.2s;
+}
+.ywb-icon-btn:hover{background:var(--ywb-cream);color:var(--ywb-ink);border-color:var(--ywb-line)}
+.ywb-icon-btn.is-liked{color:var(--ywb-red);background:rgba(255,90,95,.1)}
+.ywb-icon-btn.is-liked svg{fill:var(--ywb-red)}
+.ywb-icon-btn.is-saved{color:var(--ywb-violet);background:rgba(123,108,246,.1)}
+.ywb-icon-btn.is-saved svg{fill:var(--ywb-violet)}
+
+/* ============ 专题企划 ============ */
+.ywb-special{background:linear-gradient(180deg,#fff,var(--ywb-cream))}
+.ywb-special__grid{display:grid;grid-template-columns:repeat(12,1fr);gap:20px}
+.ywb-special-card{
+  position:relative;border-radius:var(--ywb-radius);overflow:hidden;
+  grid-column:span 4;min-height:270px;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  color:#fff;padding:22px;
+  background:#1d2140;
+  transition:.3s;
+}
+.ywb-special-card:hover{transform:translateY(-5px);box-shadow:0 22px 50px rgba(22,26,46,.22)}
+.ywb-special-card--wide{grid-column:span 8;min-height:300px}
+.ywb-special-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ywb-special-card::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(12,14,32,.92),rgba(12,14,32,.34) 62%,rgba(12,14,32,.05));
+}
+.ywb-special-card__body{position:relative;z-index:2}
+.ywb-special-card__status{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:11.5px;font-weight:600;letter-spacing:.5px;
+  background:rgba(255,255,255,.16);
+  border:1px solid rgba(255,255,255,.26);
+  padding:3px 10px;border-radius:999px;margin-bottom:10px;
+}
+.ywb-special-card__status i{width:6px;height:6px;border-radius:50%;background:var(--ywb-cyan)}
+.ywb-special-card h3{font-size:18px;font-weight:800;line-height:1.4;margin-bottom:7px}
+.ywb-special-card--wide h3{font-size:22px}
+.ywb-special-card p{font-size:13px;line-height:1.7;color:rgba(240,240,255,.78);margin-bottom:12px}
+.ywb-special-card__foot{font-size:12px;color:rgba(240,240,255,.62);display:flex;gap:14px}
+
+/* ============ 创作者矩阵 ============ */
+.ywb-creator-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.ywb-creator{
+  background:#fff;border:1px solid var(--ywb-line);border-radius:var(--ywb-radius);
+  padding:24px 22px;
+  transition:.28s;
+  position:relative;overflow:hidden;
+}
+.ywb-creator:hover{transform:translateY(-5px);box-shadow:var(--ywb-shadow-lg);border-color:#d8d1c2}
+.ywb-creator::before{
+  content:"";position:absolute;inset:0 0 auto 0;height:5px;
+  background:linear-gradient(90deg,var(--ywb-red),var(--ywb-yellow),var(--ywb-cyan));
+  opacity:0;transition:.28s;
+}
+.ywb-creator:hover::before{opacity:1}
+.ywb-creator__top{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.ywb-creator__ava{
+  width:56px;height:56px;border-radius:16px;flex:none;
+  display:grid;place-items:center;
+  font-size:19px;font-weight:800;color:#fff;letter-spacing:1px;
+  box-shadow:0 6px 16px rgba(22,26,46,.16);
+}
+.ywb-creator__name{font-size:16px;font-weight:800;color:var(--ywb-ink);line-height:1.3}
+.ywb-creator__field{font-size:12px;color:var(--ywb-red);font-weight:600;letter-spacing:.5px}
+.ywb-creator p{font-size:13px;color:var(--ywb-muted);line-height:1.75;margin-bottom:14px}
+.ywb-creator__stats{display:flex;gap:18px;font-size:12px;color:var(--ywb-muted);margin-bottom:14px}
+.ywb-creator__stats b{display:block;font-size:16px;color:var(--ywb-ink);font-weight:800}
+.ywb-creator__foot{display:flex;gap:8px}
+
+/* ============ 故事随笔 ============ */
+.ywb-story{background:#fff}
+.ywb-story__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.ywb-story-card{
+  background:var(--ywb-cream);border-radius:var(--ywb-radius);
+  overflow:hidden;border:1px solid var(--ywb-line);
+  display:flex;flex-direction:column;
+  transition:.28s;
+}
+.ywb-story-card:hover{transform:translateY(-4px);box-shadow:var(--ywb-shadow)}
+.ywb-story-card__cover{aspect-ratio:16/9;overflow:hidden;position:relative;background:#dfe3ef}
+.ywb-story-card__cover img{width:100%;height:100%;object-fit:cover}
+.ywb-story-card__cover .ywb-tag{position:absolute;top:10px;left:10px}
+.ywb-story-card__body{padding:18px 20px 20px;flex:1;display:flex;flex-direction:column}
+.ywb-story-card__date{font-size:11.5px;color:var(--ywb-muted);letter-spacing:1px;margin-bottom:7px}
+.ywb-story-card h3{font-size:16px;font-weight:800;color:var(--ywb-ink);line-height:1.5;margin-bottom:8px}
+.ywb-story-card p{font-size:13px;color:#5a5f76;line-height:1.8;flex:1;margin-bottom:14px}
+.ywb-story-card__author{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--ywb-muted)}
+
+/* ============ 作品墙 ============ */
+.ywb-wall{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.ywb-wall__item{
+  position:relative;border-radius:14px;overflow:hidden;
+  background:#e8e4db;min-height:120px;
+  transition:.3s;
+}
+.ywb-wall__item:hover{transform:scale(1.02);box-shadow:var(--ywb-shadow-lg);z-index:2}
+.ywb-wall__item img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.ywb-wall__item span{
+  position:absolute;left:10px;bottom:10px;z-index:2;
+  font-size:11.5px;color:#fff;font-weight:600;
+  background:rgba(12,14,32,.62);padding:3px 9px;border-radius:999px;
+  backdrop-filter:blur(4px);
+}
+.ywb-wall__item--lg{grid-column:span 3;grid-row:span 2;min-height:260px}
+.ywb-wall__item--md{grid-column:span 3;min-height:123px}
+.ywb-wall__item--sm{grid-column:span 2;min-height:120px}
+
+/* ============ 榜单 ============ */
+.ywb-rank__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.ywb-rank-card{
+  background:#fff;border:1px solid var(--ywb-line);border-radius:var(--ywb-radius);
+  padding:22px;
+}
+.ywb-rank-card h3{
+  font-size:15px;font-weight:800;color:var(--ywb-ink);
+  display:flex;align-items:center;gap:8px;margin-bottom:16px;
+}
+.ywb-rank-card h3 i{
+  width:22px;height:22px;border-radius:7px;display:grid;place-items:center;
+  background:var(--ywb-ink);color:#fff;font-size:11px;font-style:normal;
+}
+.ywb-rank-list li{
+  display:flex;align-items:center;gap:12px;
+  padding:10px 0;border-bottom:1px dashed var(--ywb-line);
+  font-size:13.5px;
+}
+.ywb-rank-list li:last-child{border-bottom:none}
+.ywb-rank-num{
+  width:22px;height:22px;border-radius:50%;flex:none;
+  display:grid;place-items:center;font-size:11.5px;font-weight:800;
+  background:var(--ywb-cream);color:var(--ywb-muted);
+}
+.ywb-rank-list li:nth-child(1) .ywb-rank-num{background:var(--ywb-red);color:#fff}
+.ywb-rank-list li:nth-child(2) .ywb-rank-num{background:var(--ywb-yellow);color:#3a2a00}
+.ywb-rank-list li:nth-child(3) .ywb-rank-num{background:var(--ywb-cyan);color:#fff}
+.ywb-rank-name{flex:1;color:var(--ywb-ink);font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ywb-rank-val{font-size:12px;color:var(--ywb-muted);white-space:nowrap}
+
+/* ============ 评价 ============ */
+.ywb-review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.ywb-review{
+  background:#fff;border-radius:16px;padding:20px 22px;
+  border:1px solid var(--ywb-line);
+  position:relative;
+  transition:.25s;
+}
+.ywb-review:hover{box-shadow:var(--ywb-shadow);transform:translateY(-3px)}
+.ywb-review::before{
+  content:"“";position:absolute;right:16px;top:6px;
+  font-size:52px;line-height:1;color:rgba(255,90,95,.16);
+  font-family:Georgia,serif;
+}
+.ywb-review p{font-size:13.5px;line-height:1.85;color:#4a4f66;margin-bottom:14px}
+.ywb-review__who{display:flex;align-items:center;gap:10px;font-size:12.5px}
+.ywb-review__who b{color:var(--ywb-ink);font-weight:700;display:block}
+.ywb-review__who span{color:var(--ywb-muted);font-size:11.5px}
+
+/* ============ 企业动态 ============ */
+.ywb-news{background:#fff}
+.ywb-news__list{display:grid;gap:0}
+.ywb-news__item{
+  display:grid;grid-template-columns:120px 1fr auto;gap:22px;align-items:center;
+  padding:20px 0;border-bottom:1px solid var(--ywb-line);
+  transition:.22s;
+}
+.ywb-news__item:hover{background:linear-gradient(90deg,rgba(255,201,77,.1),transparent);padding-left:14px}
+.ywb-news__date{font-size:12px;color:var(--ywb-muted);letter-spacing:1px}
+.ywb-news__date b{display:block;font-size:19px;color:var(--ywb-ink);font-weight:800;letter-spacing:0}
+.ywb-news__main h3{font-size:15.5px;font-weight:700;color:var(--ywb-ink);margin-bottom:4px;line-height:1.5}
+.ywb-news__main p{font-size:13px;color:var(--ywb-muted);line-height:1.7}
+.ywb-news__tag{font-size:11.5px;padding:4px 11px;border-radius:999px;background:var(--ywb-cream);color:var(--ywb-ink-soft);white-space:nowrap;border:1px solid var(--ywb-line)}
+
+/* ============ 合作伙伴 ============ */
+.ywb-partners{background:var(--ywb-cream)}
+.ywb-partners__grid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.ywb-partner{
+  background:#fff;border:1px solid var(--ywb-line);border-radius:14px;
+  height:74px;display:grid;place-items:center;
+  font-size:13.5px;font-weight:700;color:#7b8097;letter-spacing:1px;
+  transition:.25s;text-align:center;padding:0 8px;
+}
+.ywb-partner:hover{color:var(--ywb-ink);border-color:var(--ywb-ink);transform:translateY(-3px);box-shadow:var(--ywb-shadow)}
+
+/* ============ FAQ ============ */
+.ywb-faq{background:#fff}
+.ywb-faq__wrap{max-width:880px;margin:0 auto}
+.ywb-faq details{
+  border:1px solid var(--ywb-line);border-radius:14px;
+  background:var(--ywb-cream);
+  margin-bottom:12px;overflow:hidden;
+  transition:.25s;
+}
+.ywb-faq details[open]{background:#fff;box-shadow:var(--ywb-shadow);border-color:#d6d0c4}
+.ywb-faq summary{
+  list-style:none;cursor:pointer;
+  padding:17px 52px 17px 20px;
+  font-size:14.5px;font-weight:700;color:var(--ywb-ink);
+  position:relative;
+  user-select:none;
+}
+.ywb-faq summary::-webkit-details-marker{display:none}
+.ywb-faq summary::after{
+  content:"+";position:absolute;right:20px;top:50%;transform:translateY(-50%);
+  font-size:20px;font-weight:400;color:var(--ywb-muted);transition:.25s;
+}
+.ywb-faq details[open] summary::after{content:"−";color:var(--ywb-red)}
+.ywb-faq details p{padding:0 20px 18px;font-size:13.5px;line-height:1.9;color:#54596f}
+
+/* ============ 联系/投稿 ============ */
+.ywb-contact{
+  background:
+    radial-gradient(620px 300px at 90% 0%,rgba(123,108,246,.35),transparent 70%),
+    radial-gradient(520px 280px at 0% 100%,rgba(46,197,212,.28),transparent 70%),
+    linear-gradient(150deg,#171a30,#241f48);
+  color:#fff;
+}
+.ywb-contact__grid{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
+.ywb-contact h2{font-size:clamp(22px,3vw,30px);font-weight:800;margin-bottom:14px;letter-spacing:.5px}
+.ywb-contact__desc{font-size:14px;color:rgba(240,239,255,.76);line-height:1.95;margin-bottom:24px;max-width:520px}
+.ywb-contact__actions{display:flex;gap:12px;flex-wrap:wrap}
+.ywb-contact .ywb-btn--primary{background:var(--ywb-red);color:#fff}
+.ywb-contact .ywb-btn--primary:hover{background:#ff7378}
+.ywb-contact .ywb-btn--ghost{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.28);color:#fff}
+.ywb-contact .ywb-btn--ghost:hover{background:rgba(255,255,255,.16);border-color:#fff}
+.ywb-contact__panel{
+  background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.16);
+  border-radius:20px;padding:26px;
+  backdrop-filter:blur(10px);
+}
+.ywb-contact__panel h3{font-size:15px;font-weight:700;margin-bottom:16px;letter-spacing:.5px}
+.ywb-contact__row{
+  display:flex;justify-content:space-between;gap:14px;
+  padding:10px 0;border-bottom:1px dashed rgba(255,255,255,.16);
+  font-size:13px;
+}
+.ywb-contact__row:last-child{border-bottom:none}
+.ywb-contact__row span{color:rgba(240,239,255,.62)}
+.ywb-contact__row b{color:#fff;font-weight:600;text-align:right}
+
+/* ============ 页脚 ============ */
+.ywb-footer{background:#0f1224;color:#c9cbe0;padding:56px 0 0}
+.ywb-footer__grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:36px;padding-bottom:40px}
+.ywb-footer__brand h3{color:#fff;font-size:17px;font-weight:800;letter-spacing:1px;margin-bottom:12px}
+.ywb-footer__brand p{font-size:13px;line-height:1.9;color:#8f92ad;max-width:340px}
+.ywb-footer__col h4{font-size:13.5px;font-weight:700;color:#fff;margin-bottom:14px;letter-spacing:.5px}
+.ywb-footer__col li{margin-bottom:9px;font-size:13px;color:#8f92ad}
+.ywb-footer__col a:hover{color:var(--ywb-yellow)}
+.ywb-footer__bottom{
+  border-top:1px solid rgba(255,255,255,.09);
+  padding:20px 0;
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  font-size:12px;color:#7a7d98;
+}
+
+/* ============ Toast & 弹窗 & 回顶 ============ */
+.ywb-toast{
+  position:fixed;left:50%;bottom:34px;transform:translate(-50%,20px);
+  background:rgba(20,22,40,.94);color:#fff;
+  padding:11px 22px;border-radius:999px;
+  font-size:13.5px;z-index:999;
+  opacity:0;pointer-events:none;transition:.3s;
+  box-shadow:0 14px 34px rgba(0,0,0,.3);
+}
+.ywb-toast.is-on{opacity:1;transform:translate(-50%,0)}
+
+.ywb-modal{
+  position:fixed;inset:0;z-index:300;
+  display:none;place-items:center;
+  background:rgba(12,14,32,.55);
+  backdrop-filter:blur(6px);
+  padding:20px;
+}
+.ywb-modal.is-on{display:grid}
+.ywb-modal__box{
+  background:#fff;border-radius:20px;
+  width:min(560px,100%);max-height:86vh;overflow:auto;
+  padding:28px;position:relative;
+  box-shadow:0 30px 80px rgba(0,0,0,.35);
+  animation:ywb-pop .28s ease;
+}
+@keyframes ywb-pop{from{transform:translateY(16px) scale(.98);opacity:0}to{transform:none;opacity:1}}
+.ywb-modal__close{
+  position:absolute;right:14px;top:14px;
+  width:32px;height:32px;border-radius:50%;
+  display:grid;place-items:center;font-size:17px;
+  background:var(--ywb-cream);color:var(--ywb-ink);
+  transition:.2s;
+}
+.ywb-modal__close:hover{background:var(--ywb-red);color:#fff}
+.ywb-modal__box h3{font-size:19px;font-weight:800;color:var(--ywb-ink);margin-bottom:6px;padding-right:36px}
+.ywb-modal__box .ywb-modal__sub{font-size:13px;color:var(--ywb-muted);margin-bottom:20px;line-height:1.7}
+.ywb-field{margin-bottom:14px}
+.ywb-field label{display:block;font-size:12.5px;font-weight:700;color:var(--ywb-ink);margin-bottom:6px;letter-spacing:.5px}
+.ywb-field input,.ywb-field textarea{
+  width:100%;border:1px solid var(--ywb-line);
+  border-radius:10px;padding:10px 13px;
+  font-size:13.5px;font-family:inherit;color:var(--ywb-text);
+  background:var(--ywb-cream);transition:.2s;
+}
+.ywb-field input:focus,.ywb-field textarea:focus{
+  outline:none;border-color:var(--ywb-cyan);background:#fff;
+  box-shadow:0 0 0 4px rgba(46,197,212,.14);
+}
+.ywb-field textarea{resize:vertical;min-height:96px}
+.ywb-share-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+.ywb-share-btn{
+  flex:1 1 110px;
+  padding:12px 8px;border-radius:12px;
+  border:1px solid var(--ywb-line);background:var(--ywb-cream);
+  font-size:13px;font-weight:600;color:var(--ywb-ink);
+  text-align:center;transition:.22s;
+}
+.ywb-share-btn:hover{background:var(--ywb-ink);color:#fff;border-color:var(--ywb-ink)}
+.ywb-copylink{
+  display:flex;gap:8px;align-items:center;
+  background:var(--ywb-cream);border:1px solid var(--ywb-line);
+  border-radius:10px;padding:8px 8px 8px 14px;
+}
+.ywb-copylink code{flex:1;font-size:12px;color:var(--ywb-muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ywb-author-card{display:flex;gap:16px;align-items:center;margin-bottom:18px}
+.ywb-author-card .ywb-creator__ava{width:64px;height:64px;font-size:22px}
+.ywb-author-card b{font-size:17px;color:var(--ywb-ink);display:block}
+.ywb-author-card span{font-size:12.5px;color:var(--ywb-muted)}
+.ywb-author-desc{font-size:13.5px;line-height:1.9;color:#4a4f66;margin-bottom:18px}
+.ywb-author-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.ywb-author-tags .ywb-tag{background:var(--ywb-cream);color:var(--ywb-ink-soft);border:1px solid var(--ywb-line)}
+
+.ywb-totop{
+  position:fixed;right:24px;bottom:24px;z-index:200;
+  width:46px;height:46px;border-radius:50%;
+  background:var(--ywb-ink);color:#fff;
+  display:grid;place-items:center;font-size:17px;
+  box-shadow:0 12px 30px rgba(22,26,46,.3);
+  opacity:0;pointer-events:none;transform:translateY(14px);
+  transition:.3s;
+}
+.ywb-totop.is-on{opacity:1;pointer-events:auto;transform:none}
+.ywb-totop:hover{background:var(--ywb-red)}
+
+/* ============ 响应式 ============ */
+@media (max-width:1080px){
+  .ywb-hero__grid{grid-template-columns:1fr;gap:44px}
+  .ywb-hero__visual{min-height:auto;max-width:520px;margin:0 auto;width:100%}
+  .ywb-about__layout{grid-template-columns:1fr}
+  .ywb-about__aside{position:static;flex-direction:row;flex-wrap:wrap}
+  .ywb-pillar{flex:1 1 200px}
+  .ywb-feature__grid{grid-template-columns:1fr}
+  .ywb-stream{grid-template-columns:repeat(2,1fr)}
+  .ywb-creator-grid{grid-template-columns:repeat(2,1fr)}
+  .ywb-story__grid{grid-template-columns:repeat(2,1fr)}
+  .ywb-rank__grid{grid-template-columns:1fr}
+  .ywb-review-grid{grid-template-columns:repeat(2,1fr)}
+  .ywb-partners__grid{grid-template-columns:repeat(3,1fr)}
+  .ywb-contact__grid{grid-template-columns:1fr}
+  .ywb-footer__grid{grid-template-columns:1fr 1fr}
+  .ywb-special-card{grid-column:span 6}
+  .ywb-special-card--wide{grid-column:span 12}
+  .ywb-nav{display:none}
+  .ywb-nav.is-open{
+    display:block;position:absolute;left:0;right:0;top:100%;
+    background:#fff;border-bottom:1px solid var(--ywb-line);
+    box-shadow:var(--ywb-shadow-lg);padding:14px 20px 20px;
+  }
+  .ywb-nav.is-open ul{flex-direction:column;gap:2px}
+  .ywb-nav.is-open a{padding:10px 12px;border-radius:10px}
+  .ywb-header__inner{position:relative}
+  .ywb-nav-toggle{display:grid}
+}
+@media (max-width:760px){
+  :root{--ywb-header-h:60px}
+  .ywb-anno{font-size:12px}
+  .ywb-anno__inner{padding:0 14px}
+  .ywb-header__inner{padding:0 14px;gap:10px}
+  .ywb-logo__sub{display:none}
+  .ywb-search input{width:120px;height:34px}
+  .ywb-search input:focus{width:150px}
+  .ywb-header__tools .ywb-btn--primary{display:none}
+  .ywb-section{padding:46px 0}
+  .ywb-wrap{padding:0 14px}
+  .ywb-sec-head{margin-bottom:24px}
+  .ywb-hero{padding:48px 0 56px}
+  .ywb-hero__actions{margin-bottom:26px}
+  .ywb-stream{grid-template-columns:1fr}
+  .ywb-creator-grid{grid-template-columns:1fr}
+  .ywb-story__grid{grid-template-columns:1fr}
+  .ywb-review-grid{grid-template-columns:1fr}
+  .ywb-special-card,.ywb-special-card--wide{grid-column:span 12;min-height:250px}
+  .ywb-wall{grid-template-columns:repeat(2,1fr)}
+  .ywb-wall__item--lg{grid-column:span 2;grid-row:span 1;min-height:200px}
+  .ywb-wall__item--md{grid-column:span 1}
+  .ywb-wall__item--sm{grid-column:span 1}
+  .ywb-news__item{grid-template-columns:1fr;gap:6px}
+  .ywb-news__date{display:flex;align-items:baseline;gap:8px}
+  .ywb-news__date b{font-size:15px}
+  .ywb-partners__grid{grid-template-columns:repeat(2,1fr)}
+  .ywb-footer__grid{grid-template-columns:1fr;gap:26px}
+  .ywb-feature-side{grid-template-columns:1fr}
+  .ywb-hero__float--a{left:6px;bottom:14px}
+  .ywb-hero__float--b{right:6px;top:10px}
+  .ywb-totop{right:14px;bottom:14px}
+  .ywb-modal__box{padding:22px 18px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition-duration:.01ms!important}
+  html{scroll-behavior:auto}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 吸顶：公告条 + 页头 -->
+<div class="ywb-sticky-shell">
+  <div class="ywb-anno" role="region" aria-label="官方公告">
+    <div class="ywb-anno__inner">
+      <span class="ywb-anno__badge">官方发布</span>
+      <div class="ywb-anno__marquee">
+        <div class="ywb-anno__track">
+          <span><b>新增</b>「城市律动·2026 秋冬企划」首批 12 支原创作品上线</span>
+          <span><b>更新</b>创作者中心开放高清素材下载与作品集整理功能</span>
+          <span><b>报名</b>「艺舞吧 年度编舞挑战」第二期投稿通道已开启</span>
+          <span><b>上新</b>家居空间即兴舞影像专题 · 6 位创作者联合呈现</span>
+          <span><b>公告</b>品牌合作与版权授权通道全面升级，欢迎机构洽谈</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <header class="ywb-header">
+    <div class="ywb-header__inner">
+      <a class="ywb-logo" href="#ywb-top" aria-label="艺舞吧官方网站首页">
+        <span class="ywb-logo__mark" aria-hidden="true"></span>
+        <span class="ywb-logo__text">
+          <span class="ywb-logo__name">艺舞吧</span>
+          <span class="ywb-logo__sub">ART DANCE BAR</span>
+        </span>
+      </a>
+      <nav class="ywb-nav" id="ywb-nav" aria-label="主导航">
+        <ul>
+          <li><a href="#ywb-top">首页</a></li>
+          <li><a href="#ywb-about">品牌解析</a></li>
+          <li><a href="#ywb-feature">焦点作品</a></li>
+          <li><a href="#ywb-stream">热门视频</a></li>
+          <li><a href="#ywb-special">专题企划</a></li>
+          <li><a href="#ywb-creator">创作者</a></li>
+          <li><a href="#ywb-news">企业动态</a></li>
+          <li><a href="#ywb-faq">帮助</a></li>
+          <li><a href="#ywb-contact">联系</a></li>
+        </ul>
+      </nav>
+      <div class="ywb-header__tools">
+        <div class="ywb-search">
+          <input type="search" id="ywb-search-input" placeholder="搜索舞种 / 创作者 / 专题" aria-label="站内搜索">
+          <button class="ywb-search__btn" id="ywb-search-btn" aria-label="搜索">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/></svg>
+          </button>
+          <div class="ywb-search__tip" id="ywb-search-tip" role="status"></div>
+        </div>
+        <button class="ywb-btn ywb-btn--primary ywb-btn--sm" id="ywb-submit-btn">投稿</button>
+        <button class="ywb-nav-toggle" id="ywb-nav-toggle" aria-label="展开导航" aria-expanded="false"><span></span></button>
+      </div>
+    </div>
+  </header>
+</div>
+
+<main id="ywb-top">
+
+  <!-- 首屏 -->
+  <section class="ywb-hero">
+    <div class="ywb-wrap">
+      <div class="ywb-hero__grid">
+        <div class="ywb-hero__text">
+          <span class="ywb-hero__badge"><i></i>艺舞吧官方网站 · 舞蹈影像内容社区</span>
+          <h1><em>艺舞吧</em></h1>
+          <p class="ywb-hero__slogan">让每一次起舞，都被高清记录与认真看见</p>
+          <p class="ywb-hero__intro">
+            艺舞吧是企业级舞蹈影像品牌与内容平台，深耕舞蹈垂直领域，为舞者、编导、舞团与舞蹈机构搭建原创内容生态。我们提供专业拍摄记录、精品内容发布、创作支持与社区互动，以匠心打磨每一支作品，让真实的身体表达获得持久的影响力。
+          </p>
+          <div class="ywb-hero__actions">
+            <button class="ywb-btn ywb-btn--primary" data-scroll="#ywb-feature">浏览焦点作品</button>
+            <button class="ywb-btn ywb-btn--ghost" data-scroll="#ywb-creator">认识创作者</button>
+            <button class="ywb-btn ywb-btn--ghost" id="ywb-share-btn">分享本站</button>
+          </div>
+          <div class="ywb-hero__stats">
+            <div class="ywb-stat">
+              <div class="ywb-stat__num" data-count="12800">0<small>+</small></div>
+              <div class="ywb-stat__label">原创舞蹈影像作品</div>
+            </div>
+            <div class="ywb-stat">
+              <div class="ywb-stat__num" data-count="960">0<small>+</small></div>
+              <div class="ywb-stat__label">签约与认证创作者</div>
+            </div>
+            <div class="ywb-stat">
+              <div class="ywb-stat__num" data-count="36">0<small>万</small></div>
+              <div class="ywb-stat__label">社区注册舞者与观众</div>
+            </div>
+          </div>
+        </div>
+        <div class="ywb-hero__visual">
+          <div class="ywb-hero__stage">
+            <img alt="艺舞吧品牌主视觉：黑底舞台上跃起的现代舞者剪影" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 680'%3E%3Cdefs%3E%3ClinearGradient id='bg1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%231b1f3b'/%3E%3Cstop offset='0.55' stop-color='%232d2a5c'/%3E%3Cstop offset='1' stop-color='%2347336e'/%3E%3C/linearGradient%3E%3CradialGradient id='spot1' cx='0.5' cy='0' r='0.9'%3E%3Cstop offset='0' stop-color='%23ffc94d' stop-opacity='0.75'/%3E%3Cstop offset='1' stop-color='%23ffc94d' stop-opacity='0'/%3E%3C/radialGradient%3E%3ClinearGradient id='fl1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23ff5a5f'/%3E%3Cstop offset='1' stop-color='%23ffc94d'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='680' fill='url(%23bg1)'/%3E%3Cellipse cx='400' cy='40' rx='430' ry='300' fill='url(%23spot1)'/%3E%3Ccircle cx='640' cy='150' r='96' fill='%232ec5d4' opacity='0.16'/%3E%3Ccircle cx='150' cy='520' r='130' fill='%237b6cf6' opacity='0.2'/%3E%3Cpath d='M110 660 Q300 430 400 300 T700 660' stroke='%23ffffff' stroke-opacity='0.1' stroke-width='2' fill='none'/%3E%3C!-- 舞者 --%3E%3Cg transform='translate(400 370)'%3E%3Cpath d='M-8 -150 q34 -18 54 8 q14 20 -6 40 q-22 22 -52 4' fill='%23ff5a5f'/%3E%3Ccircle cx='10' cy='-158' r='26' fill='%23ffe3c2'/%3E%3Cpath d='M-6 -128 q30 -14 46 14 l30 62 q8 18 -8 26 q-16 8 -26 -10 l-22 -44' fill='%23ffc94d'/%3E%3Cpath d='M6 -70 q-4 74 -58 132' stroke='%23f4f1ff' stroke-width='17' stroke-linecap='round' fill='none'/%3E%3Cpath d='M26 -66 q48 44 34 128' stroke='%23f4f1ff' stroke-width='15' stroke-linecap='round' fill='none'/%3E%3Cpath d='M-52 62 q-56 8 -82 -24' stroke='%23ff5a5f' stroke-width='13' stroke-linecap='round' fill='none'/%3E%3Cpath d='M60 62 q46 22 96 6' stroke='%232ec5d4' stroke-width='13' stroke-linecap='round' fill='none'/%3E%3C/g%3E%3Cpath d='M60 620 H740' stroke='%23ffffff' stroke-opacity='0.18' stroke-width='2'/%3E%3Cg opacity='0.85'%3E%3Crect x='96' y='120' width='92' height='26' rx='13' fill='%23ffffff' fill-opacity='0.12'/%3E%3Crect x='96' y='156' width='150' height='9' rx='4.5' fill='%23ffffff' fill-opacity='0.16'/%3E%3Crect x='96' y='174' width='110' height='9' rx='4.5' fill='%23ffffff' fill-opacity='0.1'/%3E%3C/g%3E%3Crect x='560' y='540' width='164' height='54' rx='14' fill='%23161a2e' fill-opacity='0.7' stroke='%23ffffff' stroke-opacity='0.22'/%3E%3Cpath d='M586 560 l0 16 l14 -8 z' fill='%23ffc94d'/%3E%3Crect x='612' y='558' width='88' height='7' rx='3.5' fill='%23ffffff' fill-opacity='0.55'/%3E%3Crect x='612' y='572' width='56' height='6' rx='3' fill='%23ffffff' fill-opacity='0.28'/%3E%3C/svg%3E">
+            <div class="ywb-hero__dots" aria-hidden="true"><i></i><i></i><i></i></div>
+          </div>
+          <div class="ywb-hero__float ywb-hero__float--a">
+            <b>本周新增 148 支作品</b>
+            <span>现代舞 · 街舞 · 国风 · 即兴</span>
+          </div>
+          <div class="ywb-hero__float ywb-hero__float--b">
+            <b>4K 高清 · 官方认证</b>
+            <span>专业摄影棚与合作舞团</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 品牌解析 -->
+  <section class="ywb-about ywb-section" id="ywb-about">
+    <div class="ywb-wrap">
+      <div class="ywb-sec-head">
+        <div>
+          <span class="ywb-eyebrow">Brand Insight</span>
+          <h2 class="ywb-sec-title">关于艺舞吧：一个认真对待舞蹈影像的品牌社区</h2>
+        </div>
+      </div>
+      <div class="ywb-about__layout">
+        <div class="ywb-about__prose">
+          <p>
+            <strong>艺舞吧</strong>是一个以舞蹈为核心内容形态的视频品牌社区，也是一份持续运营的线上舞蹈刊物。我们相信，舞蹈的价值不只发生在舞台上的那几分钟，更发生在无数个练功房、走廊、天台与客厅里的日常时刻。艺舞吧的官方网站，正是为这些时刻准备的一块公共屏幕——让身体的语言被完整地记录、被更专业地呈现、被更多人真实地看见。
+          </p>
+          <p>
+            平台内容围绕五条主线展开：<span class="ywb-key">原创舞作</span>、<span class="ywb-key">编舞记录</span>、<span class="ywb-key">舞者访谈</span>、<span class="ywb-key">教学干货</span>与<span class="ywb-key">城市影像</span>。我们不追逐整齐划一的爆款模板，而是尊重每一种身体节奏：有人喜欢现代舞的克制与留白，有人偏爱街舞的爆发与对抗，有人在国风身韵里寻找归属，也有人只是想在加班后的深夜，用十五分钟即兴把情绪卸下来。这些都在艺舞吧有一席之地。
+          </p>
+          <p>
+            作为一家深耕舞蹈垂直领域的内容企业，我们对品质的要求落在三个具体动作上：其一，<strong>拍摄与后期的专业标准</strong>——机位、光线、声音、调色都有可复用的规范，让好作品不被粗糙的技术拖累；其二，<strong>内容编排的编辑视角</strong>——每支推荐作品都配有编导手记或舞者自述，让观众不只看到动作，也理解动作背后的选择；其三，<strong>社区的真实反馈</strong>——点赞、收藏、评论与投稿都不是装饰，它们会真实地影响专题选题与新人推荐。
+          </p>
+          <p>
+            艺舞吧同时是一个<span class="ywb-key">创作者友好</span>的平台。我们为认证创作者提供作品集页面、高清素材下载、拍摄场地与设备合作资源、以及定期的线上工作坊。对刚起步的舞者与编导，我们设有新人扶持企划与年度编舞挑战，鼓励大家把"还不太成熟"的尝试也上传上来——因为内容生态的活力，恰恰来自那些尚未完美的真实片段。我们深知，一个社区的口碑并不来自宣传语，而来自每一次点击之后是否真的看到了值得停留的内容。
+          </p>
+          <p>
+            从品牌故事的角度说，艺舞吧的起点很朴素：几个热爱舞蹈又习惯用镜头记录的人，发现身边大量优秀的舞者没有渠道展示，而观众也很难系统地找到高质量的舞蹈影像。于是我们决定做一件事——把"记录"做成一件专业的事，把"观看"做成一件有陪伴感的事。今天，艺舞吧已与多家舞团、舞蹈工作室、艺术院校与生活方式品牌建立合作，持续推动舞蹈内容走出圈层，进入更日常的审美视野。
+          </p>
+          <p>
+            未来，艺舞吧会继续在三个方向上投入：更完整的<span class="ywb-key">内容生态</span>（从作品到教学、从访谈到达人档案）、更开放的<span class="ywb-key">创作工具</span>（灵感脚本、标签建议、剪辑思路）、更温暖的<span class="ywb-key">社区关系</span>（同城练舞、作品互评、线下展映）。我们期待艺舞吧不只是一个"看视频的地方"，而是一个让舞者和观众彼此记住名字的地方。这正是我们理解的品牌责任，也是我们愿意长期坚持的匠心。
+          </p>
+        </div>
+        <aside class="ywb-about__aside">
+          <div class="ywb-pillar">
+            <div class="ywb-pillar__icon">🎬</div>
+            <h3>原创优先</h3>
+            <p>坚持正版授权与原创署名，每一支作品都可追溯作者与团队。</p>
+          </div>
+          <div class="ywb-pillar">
+            <div class="ywb-pillar__icon">📐</div>
+            <h3>专业标准</h3>
+            <p>统一的高清拍摄与后期规范，让技术为表达服务而非干扰。</p>
+          </div>
+          <div class="ywb-pillar">
+            <div class="ywb-pillar__icon">🤝</div>
+            <h3>社区共创</h3>
+            <p>专题选题来自社区投票，创作者反馈直接影响平台迭代。</p>
+          </div>
+          <div class="ywb-pillar">
+            <div class="ywb-pillar__icon">🌱</div>
+            <h3>新人扶持</h3>
+            <p>新人企划、编舞挑战与工作坊，为成长留出真实的空间。</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- 焦点作品 -->
+  <section class="ywb-section" id="ywb-feature">
+    <div class="ywb-wrap">
+      <div class="ywb-sec-head">
+        <div>
+          <span class="ywb-eyebrow">Featured Works</span>
+          <h2 class="ywb-sec-title">焦点作品：本周值得停留的六支影像</h2>
+          <p class="ywb-sec-desc">由编辑团队与社区共同挑选，覆盖现代舞、街舞、国风与空间即兴，附编导手记与创作背景。</p>
+        </div>
+        <a class="ywb-link-more" href="#ywb-stream">进入热门视频流</a>
+      </div>
+
+      <div class="ywb-feature__grid">
+        <article class="ywb-feature-main">
+          <img alt="焦点作品封面：深夜练功房里现代舞者独舞的侧影" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 960 620'%3E%3Cdefs%3E%3ClinearGradient id='f1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23222a4e'/%3E%3Cstop offset='1' stop-color='%234c3a63'/%3E%3C/linearGradient%3E%3ClinearGradient id='f1m' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%230a0c1c' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%230a0c1c' stop-opacity='0.9'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='960' height='620' fill='url(%23f1)'/%3E%3Crect x='0' y='420' width='960' height='200' fill='%230c0f22' opacity='0.55'/%3E%3Crect x='700' y='60' width='190' height='300' fill='%23ffc94d' opacity='0.1'/%3E%3Crect x='740' y='100' width='110' height='180' fill='%23ffc94d' opacity='0.22'/%3E%3Crect x='0' y='0' width='960' height='620' fill='url(%23f1m)'/%3E%3C!-- 舞者剪影 --%3E%3Cg transform='translate(430 380)' fill='%23f6f2ff' opacity='0.92'%3E%3Ccircle cx='0' cy='-186' r='24'/%3E%3Cpath d='M-14 -160 q30 -12 44 12 l26 80 q6 18 -12 22 l-22 -58'/%3E%3Cpath d='M-6 -100 q-8 78 -70 138 l24 12 q62 -58 74 -142 z'/%3E%3Cpath d='M20 -96 q56 40 44 128 l-26 4 q10 -78 -40 -110 z'/%3E%3C/g%3E%3Cg transform='translate(430 380)' fill='%23ff5a5f' opacity='0.85'%3E%3Cpath d='M-70 30 q-46 34 -96 22' stroke='%23ff5a5f' stroke-width='12' stroke-linecap='round' fill='none'/%3E%3Cpath d='M60 34 q50 20 92 0' stroke='%232ec5d4' stroke-width='12' stroke-linecap='round' fill='none'/%3E%3C/g%3E%3Cg opacity='0.5'%3E%3Crect x='90' y='86' width='150' height='8' rx='4' fill='%23ffffff'/%3E%3Crect x='90' y='108' width='96' height='8' rx='4' fill='%23ffffff' opacity='0.6'/%3E%3C/g%3E%3C/svg%3E">
+          <span class="ywb-play" aria-hidden="true">▶</span>
+          <div class="ywb-feature-main__body">
+            <div class="ywb-feature-main__meta">
+              <span class="ywb-tag ywb-tag--live">编辑推荐</span>
+              <span class="ywb-tag ywb-tag--soft">现代舞</span>
+              <span class="ywb-tag ywb-tag--soft">4K 高清</span>
+            </div>
+            <h3>《练功房零点》——当代舞者的十二小时独处记录</h3>
+            <p>从傍晚七点到凌晨十二点，编导林之遥用一个固定机位和一台手持，记录下舞者独自重复同一段动作的全过程。没有配乐，只有呼吸、地面摩擦与空调的低鸣。</p>
+            <div class="ywb-feature-main__foot">
+              <span>林之遥舞蹈影像工作室</span><span>·</span><span>18.6 万次播放</span><span>·</span><span>评论区 421 条</span>
+            </div>
+          </div>
+        </article>
+
+        <div class="ywb-feature-side">
+          <article class="ywb-vcard">
+            <div class="ywb-vcard__cover">
+              <span class="ywb-tag ywb-tag--soft" style="background:rgba(22,26,46,.72)">街舞</span>
+              <img alt="视频封面：雨天地下车库里的街舞斗舞现场" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Cdefs%3E%3ClinearGradient id='c1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23313a5c'/%3E%3Cstop offset='1' stop-color='%23151a2e'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='480' height='270' fill='url(%23c1)'/%3E%3Crect x='0' y='196' width='480' height='74' fill='%230e1122'/%3E%3Cg stroke='%23ffffff' stroke-opacity='0.09' stroke-width='2'%3E%3Cpath d='M60 196 V70 H180'/%3E%3Cpath d='M340 196 V60 H440'/%3E%3C/g%3E%3Ccircle cx='120' cy='120' r='46' fill='%23ff5a5f' opacity='0.22'/%3E%3Cg fill='%23ffc94d'%3E%3Ccircle cx='250' cy='96' r='15'/%3E%3Cpath d='M240 112 q18 -6 26 10 l14 46 q3 12 -9 14 l-12 -34'/%3E%3Cpath d='M246 148 q-6 40 -34 66 l16 8 q28 -30 32 -70 z'/%3E%3Cpath d='M258 146 q28 22 22 66 l-16 2 q4 -40 -20 -56 z'/%3E%3C/g%3E%3Cg fill='%232ec5d4' opacity='0.9'%3E%3Ccircle cx='176' cy='124' r='13'/%3E%3Cpath d='M168 138 q14 -4 20 8 l10 34 q2 9 -7 10 l-9 -25'/%3E%3Cpath d='M172 164 q-6 30 -28 48 l13 7 q22 -22 25 -52 z'/%3E%3Cpath d='M182 162 q22 16 17 48 l-12 2 q3 -28 -15 -40 z'/%3E%3C/g%3E%3C/svg%3E">
+              <span class="ywb-vcard__play" aria-hidden="true">▶</span>
+            </div>
+            <div class="ywb-vcard__body">
+              <h4>车库不熄灯：一场没有评委的斗舞</h4>
+              <p>八个年轻人、两块防滑垫，规则只有一条——音乐不停，人不停。</p>
+              <div class="ywb-vcard__foot">
+                <span class="ywb-vcard__author"><span class="ywb-avatar" style="background:#ff5a5f">阿</span><span>阿斯</span></span>
+                <span>9.2 万</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="ywb-vcard">
+            <div class="ywb-vcard__cover">
+              <span class="ywb-tag ywb-tag--soft" style="background:rgba(22,26,46,.72)">国风</span>
+              <img alt="视频封面：江南园林水榭前执扇起舞的国风舞者" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Cdefs%3E%3ClinearGradient id='c2' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23e8f0e4'/%3E%3Cstop offset='1' stop-color='%23b7cbb2'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='480' height='270' fill='url(%23c2)'/%3E%3Cpath d='M0 200 Q120 170 240 200 T480 196 V270 H0 Z' fill='%238aa886'/%3E%3Cpath d='M0 226 Q140 204 260 228 T480 222 V270 H0 Z' fill='%235f8163'/%3E%3Cg stroke='%234f6b50' stroke-width='5' fill='none'%3E%3Cpath d='M60 200 V96 H150'/%3E%3Cpath d='M420 200 V96 H330'/%3E%3C/g%3E%3Cpath d='M46 96 Q100 66 160 96 Z' fill='%233f5a42'/%3E%3Cpath d='M320 96 Q380 66 440 96 Z' fill='%233f5a42'/%3E%3Cg transform='translate(240 176)'%3E%3Ccircle cx='0' cy='-92' r='18' fill='%23f4d3b4'/%3E%3Cpath d='M-12 -74 q24 -10 36 8 l18 52 q4 12 -10 14 l-16 -36' fill='%23ff5a5f'/%3E%3Cpath d='M-6 -40 q-10 46 -44 76' stroke='%23f7f4ee' stroke-width='14' stroke-linecap='round' fill='none'/%3E%3Cpath d='M18 -38 q34 26 24 72' stroke='%23f7f4ee' stroke-width='14' stroke-linecap='round' fill='none'/%3E%3Cpath d='M42 -30 q46 -14 62 -44' stroke='%23ffffff' stroke-width='3' fill='none'/%3E%3Cpath d='M100 -74 a16 22 0 1 0 6 26 l-6 -26 z' fill='%23ffc94d'/%3E%3C/g%3E%3C/svg%3E">
+              <span class="ywb-vcard__play" aria-hidden="true">▶</span>
+            </div>
+            <div class="ywb-vcard__body">
+              <h4>水榭三分钟：一支国风舞的空间取景课</h4>
+              <p>从走位到镜头跟随，跟着编导看园林如何参与一支舞的叙事。</p>
+              <div class="ywb-vcard__foot">
+                <span class="ywb-vcard__author"><span class="ywb-avatar" style="background:#5f8163">沈</span><span>沈青禾</span></span>
+                <span>7.8 万</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="ywb-vcard">
+            <div class="ywb-vcard__cover">
+              <span class="ywb-tag ywb-tag--soft" style="background:rgba(22,26,46,.72)">访谈</span>
+              <img alt="视频封面：编导手持分镜本在排练厅受访的画面" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Cdefs%3E%3ClinearGradient id='c3' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23f3d9c2'/%3E%3Cstop offset='1' stop-color='%23d8b195'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='480' height='270' fill='url(%23c3)'/%3E%3Crect x='0' y='0' width='480' height='270' fill='%23b98f74' opacity='0.25'/%3E%3Ccircle cx='392' cy='62' r='64' fill='%23fff4e6' opacity='0.55'/%3E%3Cg transform='translate(150 190)'%3E%3Ccircle cx='0' cy='-96' r='22' fill='%23e8bb98'/%3E%3Cpath d='M-14 -74 q26 -10 38 10 l16 62 q3 14 -13 15 l-16 -46 z' fill='%238c5a3f'/%3E%3Cpath d='M-40 4 h96 l12 52 h-120 z' fill='%232a3050'/%3E%3C/g%3E%3Cg transform='translate(300 198)'%3E%3Ccircle cx='0' cy='-88' r='19' fill='%23f1c9a7'/%3E%3Cpath d='M-12 -68 q22 -9 33 9 l22 58 q4 12 -11 13 l-22 -42 z' fill='%232ec5d4'/%3E%3Cpath d='M-34 6 h84 l10 46 h-104 z' fill='%23344a6b'/%3E%3C/g%3E%3Crect x='26' y='26' width='150' height='46' rx='10' fill='%23ffffff' fill-opacity='0.7'/%3E%3Crect x='40' y='40' width='96' height='7' rx='3.5' fill='%238c6a52'/%3E%3Crect x='40' y='54' width='64' height='7' rx='3.5' fill='%23b98f74'/%3E%3C/svg%3E">
+              <span class="ywb-vcard__play" aria-hidden="true">▶</span>
+            </div>
+            <div class="ywb-vcard__body">
+              <h4>「编舞不是设计动作」——与三位独立编导对谈</h4>
+              <p>聊到深夜的排练厅，关于灵感、身体限制与如何面对观众的沉默。</p>
+              <div class="ywb-vcard__foot">
+                <span class="ywb-vcard__author"><span class="ywb-avatar" style="background:#8c5a3f">艺</span><span>艺舞吧访谈组</span></span>
+                <span>6.1 万</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="ywb-vcard">
+            <div class="ywb-vcard__cover">
+              <span class="ywb-tag ywb-tag--soft" style="background:rgba(22,26,46,.72)">即兴</span>
+              <img alt="视频封面：客厅地毯上赤脚即兴舞动的日常画面" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Cdefs%3E%3ClinearGradient id='c4' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23fbf1e2'/%3E%3Cstop offset='1' stop-color='%23f0ddc4'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='480' height='270' fill='url(%23c4)'/%3E%3Crect x='0' y='206' width='480' height='64' fill='%23d8bfa1'/%3E%3Crect x='54' y='40' width='120' height='96' rx='6' fill='%23ffffff' opacity='0.8'/%3E%3Cpath d='M54 40 h120 v18 h-120 z' fill='%23c9b096' opacity='0.5'/%3E%3Crect x='330' y='60' width='100' height='140' rx='8' fill='%23a8775a' opacity='0.35'/%3E%3Cpath d='M120 206 q40 -6 70 0 q30 6 60 0' stroke='%23b39274' stroke-width='4' fill='none'/%3E%3Cg transform='translate(240 174)'%3E%3Ccircle cx='0' cy='-88' r='19' fill='%23f5cba8'/%3E%3Cpath d='M-11 -70 q22 -9 33 9 l15 48 q4 12 -11 13 l-14 -34' fill='%237b6cf6'/%3E%3Cpath d='M-4 -34 q-4 34 -28 50' stroke='%23f7f4ee' stroke-width='12' stroke-linecap='round' fill='none'/%3E%3Cpath d='M16 -34 q26 16 22 48' stroke='%23f7f4ee' stroke-width='12' stroke-linecap='round' fill='none'/%3E%3Cpath d='M30 -60 q40 -18 56 -6' stroke='%23ff5a5f' stroke-width='11' stroke-linecap='round' fill='none'/%3E%3C/g%3E%3C/svg%3E">
+              <span class="ywb-vcard__play" aria-hidden="true">▶</span>
+            </div>
+            <div class="ywb-vcard__body">
+              <h4>下班后十五分钟：客厅即兴的治愈练习</h4>
+              <p>不需要镜子，不需要观众，跟着呼吸把一天的疲惫跳出去。</p>
+              <div class="ywb-vcard__foot">
+                <span class="ywb-vcard__author"><span class="ywb-avatar" style="background:#7b6cf6">小</span><span>小满</span></span>
+                <span>12.4 万</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 热门视频流 -->
+  <section class="ywb-section ywb-section--alt" id="ywb-stream">
+    <div class="ywb-wrap">
+      <div class="ywb-sec-head">
+        <div>
+          <span class="ywb-eyebrow">Trending Stream</span>
+          <h2 class="ywb-sec-title">热门视频流：社区正在讨论的舞蹈影像</h2>
+          <p class="ywb-sec-desc">按舞种与题材筛选，找到你此刻想看的身体语言。点赞与收藏会实时同步到你的浏览器。</p>
+        </div>
+      </div>
+
+      <div class="ywb-stream-bar" id="ywb-filter-bar" role="tablist" aria-label="题材筛选">
+        <button class="ywb-filter is-active" data-filter="all">全部</button>
+        <button class="ywb-filter" data-filter="现代舞">现代舞</button>
+        <button class="ywb-filter" data-filter="街舞">街舞</button>
+        <button class="ywb-filter" data-filter="国风">国风</button>
+        <button class="ywb-filter" data-filter="教程">教程干货</button>
+        <button class="ywb-filter" data-filter="城市">城市探索</button>
+        <button class="ywb-filter" data-filter="访谈">人物访谈</button>
+      </div>
+
+      <div class="ywb-stream" id="ywb-stream-grid">
+        <article class="ywb-vcard" data-cat="现代舞">
+          <div class="ywb-vcard__cover">
+            <span class="ywb-tag ywb-tag--ink">现代舞</span>
+            <img alt="视频封面：白墙前两人贴身配合的双人舞托举" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Crect width='480' height='270' fill='%23ece9e2'/%3E%3Crect x='0' y='212' width='480' height='58' fill='%23d5d0c6'/%3E%3Cg transform='translate(200 190)'%3E%3Ccircle cx='0' cy='-104' r='20' fill='%23e6b98f'/%3E%3Cpath d='M-12 -84 q24 -10 36 8 l20 56 q4 13 -12 14 l-18 -40 z' fill='%232a3050'/%3E%3Cpath d='M-6 -46 q-14 42 -44 62' stroke='%232a3050' stroke-width='14' stroke-linecap='round' fill='none'/%3E%3Cpath d='M18 -44 q36 20 34 62' stroke='%23ff5a5f' stroke-width='14' stroke-linecap='round' fill='none'/%3E%3C/g%3E%3Cg transform='translate(290 150) rotate(-24)'%3E%3Ccircle cx='0' cy='-56' r='18' fill='%23f2c9a4'/%3E%3Cpath d='M-11 -38 q22 -9 33 8 l14 40 q3 11 -11 12 l-12 -30 z' fill='%23ff5a5f'/%3E%3Cpath d='M-4 -12 q-8 30 -34 40' stroke='%23f7f4ee' stroke-width='12' stroke-linecap='round' fill='none'/%3E%3C/g%3E%3Ccircle cx='82' cy='52' r='34' fill='%23ffc94d' opacity='0.4'/%3E%3C/svg%3E">
+            <span class="ywb-vcard__play" aria-hidden="true">▶</span>
+          </div>
+          <div class="ywb-vcard__body">
+            <h4>双人舞的重心在哪里：一次慢镜拆解</h4>
+            <p>托举失败往往不是力量问题。舞者用慢镜回放演示三个接触点的受力逻辑，附练习方法。</p>
+            <div class="ywb-vcard__foot">
+              <span class="ywb-vcard__author"><span class="ywb-avatar" style="background:#2a3050">陆</span><span>陆行舟</span></span>
+              <span>8.6 万次播放</span>
+            </div>
+            <div class="ywb-vcard__actions">
+              <button class="ywb-icon-btn ywb-like-btn" aria-label="点赞">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.6-7-9.6A4.4 4.4 0 0 1 12 7a4.4 4.4 0 0 1 7 3.4c0 5-7 9.6-7 9.6z"/></svg>
+                <span class="ywb-like-num">3241</span>
+              </button>
+              <button class="ywb-icon-btn ywb-save-btn" aria-label="收藏">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h12v18l-6-4.5L6 21z"/></svg>
+                收藏
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="ywb-vcard" data-cat="街舞">
+          <div class="ywb-vcard__cover">
+            <span class="ywb-tag ywb-tag--ink">街舞</span>
+            <img alt="视频封面：夜跑巷口的街舞地板动作定格瞬间" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Cdefs%3E%3ClinearGradient id='s2' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%231a2140'/%3E%3Cstop offset='1' stop-color='%23342c52'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='480' height='270' fill='url(%23s2)'/%3E%3Crect x='0' y='200' width='480' height='70' fill='%230f1428'/%3E%3Cpath d='M60 200 V96 H190' stroke='%232ec5d4' stroke-width='4' opacity='0.55' fill='none'/%3E%3Cpath d='M330 200 V82 H430' stroke='%23ff5a5f' stroke-width='4' opacity='0.55' fill='none'/%3E%3Cg transform='translate(240 206)'%3E%3Ccircle cx='-6' cy='-96' r='18' fill='%23f0c39c'/%3E%3Cpath d='M-18 -78 q24 -12 38 6 l10 40 q3 12 -12 13 l-10 -28' fill='%23ffc94d'/%3E%3Cpath d='M-40 -30 q-42 10 -62 -12' stroke='%23ffc94d' stroke-width='12' stroke-linecap='round' fill='none'/%3E%3Cpath d='M-46 12 h70' stroke='%23f7f4ee' stroke-width='14' stroke-linecap='round'/%3E%3Cpath d='M-14 12 q20 -44 62 -30' stroke='%23ff5a5f' stroke-width='14' stroke-linecap='round' fill='none'/%3E%3C/g%3E%3C/svg%3E">
+            <span class="ywb-vcard__play" aria-hidden="true">▶</span>
+          </div>
+          <div class="ywb-vcard__body">
+            <h4>从零学 Freeze：六周地板动作训练日志</h4>
+            <p>一位上班族的真实训练记录，含每周失败片段与保护手腕的小技巧，不滤镜不美化。</p>
+            <div class="ywb-vcard__foot">
+              <span class="ywb-vcard__author"><span class="ywb-avatar" style="background:#ffc94d;color:#3a2a00">阿</span><span>阿斯</span></span>
+              <span>15.2 万次播放</span>
+            </div>
+            <div class="ywb-vcard__actions">
+              <button class="ywb-icon-btn ywb-like-btn" aria-label="点赞">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.6-7-9.6A4.4 4.4 0 0 1 12 7a4.4 4.4 0 0 1 7 3.4c0 5-7 9.6-7 9.6z"/></svg>
+                <span class="ywb-like-num">5810</span>
+              </button>
+              <button class="ywb-icon-btn ywb-save-btn" aria-label="收藏">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h12v18l-6-4.5L6 21z"/></svg>
+                收藏
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="ywb-vcard" data-cat="国风">
+          <div class="ywb-vcard__cover">
+            <span class="ywb-tag ywb-tag--ink">国风</span>
+            <img alt="视频封面：古戏台红柱间的水袖舞动瞬间" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Cdefs%3E%3ClinearGradient id='s3' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23f6e7d8'/%3E%3Cstop offset='1' stop-color='%23e3c3ad'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='480' height='270' fill='url(%23s3)'/%3E%3Crect x='0' y='212' width='480' height='58' fill='%23a86b58'/%3E%3Crect x='36' y='52' width='26' height='162' fill='%23b8483f'/%3E%3Crect x='418' y='52' width='26' height='162' fill='%23b8483f'/%3E%3Cpath d='M30 52 h36 l-8 14 h-20 z' fill='%238e312b'/%3E%3Cpath d='M412 52 h36 l-8 14 h-20 z' fill='%238e312b'/%3E%3Cg transform='translate(240 190)'%3E%3Ccircle cx='0' cy='-96' r='18' fill='%23f5cca8'/%3E%3Cpath d='M-12 -78 q24 -10 36 8 l14 46 q4 12 -11 13 l-14 -32 z' fill='%23b8483f'/%3E%3Cpath d='M-2 -42 q-24 22 -70 6 q44 -18 70 -6z' fill='%23fbf5ef'/%3E%3Cpath d='M16 -42 q38 8 82 -18 q-40 40 -82 26z' fill='%23fbf5ef'/%3E%3Cpath d='M-4 -34 q-6 32 -28 48' stroke='%23f7f4ee' stroke-width='13' stroke-linecap='round' fill='none'/%3E%3C/g%3E%3C/svg%3E">
+            <span class="ywb-vcard__play" aria-hidden="true">▶</span>
+          </div>
+          <div class="ywb-vcard__body">
+            <h4>水袖不怕甩不出弧线：三种基础发力顺序</h4>
+            <p>沈青禾的教学笔记视频版，从肩、肘、腕的启动顺序讲到收袖时机，适合初学国风身韵者。</p>
+            <div class="ywb-vcard__foot">
+              <span class="ywb-vcard__author"><span class="ywb-avatar" style="background:#b8483f">沈</span><span>沈青禾</span></span>
+              <span>11.7 万次播放</span>
+            </div>
+            <div class="ywb-vcard__actions">
+              <button class="ywb-icon-btn ywb-like-btn" aria-label="点赞">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.6-7-9.6A4.4 4.4 0 0 1 12 7a4.4 4.4 0 0 1 7 3.4c0 5-7 9.6-7 9.6z"/></svg>
+                <span class="ywb-like-num">4207</span>
+              </button>
+              <button class="ywb-icon-btn ywb-save-btn" aria-label="收藏">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h12v18l-6-4.5L6 21z"/></svg>
+                收藏
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="ywb-vcard" data-cat="教程">
+          <div class="ywb-vcard__cover">
+            <span class="ywb-tag ywb-tag--ink">教程</span>
+            <img alt="视频封面：手机支架拍摄练舞视频的幕后搭建场景" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Crect width='480' height='270' fill='%23e8eef3'/%3E%3Crect x='0' y='214' width='480' height='56' fill='%23c7d3de'/%3E%3Crect x='150' y='66' width='86' height='150' rx='12' fill='%232a3050'/%3E%3Crect x='162' y='80' width='62' height='112' rx='6' fill='%238ee6ff'/%3E%3Crect x='182' y='200' width='22' height='22' fill='%23161a2e'/%3E%3Cpath d='M186 214 h60' stroke='%23161a2e' stroke-width='6' stroke-linecap='round'/%3E%3Crect x='292' y='96' width='110' height='94' rx='10' fill='%23ffc94d' opacity='0.6'/%3E%3Crect x='304' y='110' width='86' height='10' rx='5' fill='%23ffffff'/%3E%3Crect x='304' y='130' width='58' height='10' rx='5' fill='%23ffffff' opacity='0.75'/%3E%3Ccircle cx='64' cy='90' r='34' fill='%23ff5a5f' opacity='0.35'/%3E%3C/svg%3E">
+            <span class="ywb-vcard__play" aria-hidden="true">▶</span>
+          </div>
+          <div class="ywb-vcard__body">
+            <h4>手机也能拍好舞蹈：光线、机位与收声三件事</h4>
+            <p>不买设备也能提升成片质感。从窗边逆光到领夹麦的替代方案，一步步演示。</p>
+            <div class="ywb-vcard__foot">
+              <span class="ywb-vcard__author"><span class="ywb-avatar" style="background:#2ec5d4">周</span><span>周微</span></span>
+              <span>20.3 万次播放</span>
+            </div>
+            <div class="ywb-vcard__actions">
+              <button class="ywb-icon-btn ywb-like-btn" aria-label="点赞">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.6-7-9.6A4.4 4.4 0 0 1 12 7a4.4 4.4 0 0 1 7 3.4c0 5-7 9.6-7 9.6z"/></svg>
+                <span class="ywb-like-num">7935</span>
+              </button>
+              <button class="ywb-icon-btn ywb-save-btn" aria-label="收藏">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h12v18l-6-4.5L6 21z"/></svg>
+                收藏
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="ywb-vcard" data-cat="城市">
+          <div class="ywb-vcard__cover">
+            <span class="ywb-tag ywb-tag--ink">城市</span>
+            <img alt="视频封面：清晨天桥上进行城市探索式即兴舞动的舞者" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Cdefs%3E%3ClinearGradient id='s5' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23cfe3ee'/%3E%3Cstop offset='1' stop-color='%23eef3f0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='480' height='270' fill='url(%23s5)'/%3E%3Cg fill='%23a9bcc9'%3E%3Crect x='20' y='60' width='60' height='150'/%3E%3Crect x='92' y='96' width='48' height='114'/%3E%3Crect x='356' y='48' width='54' height='162'/%3E%3Crect x='424' y='104' width='40' height='106'/%3E%3C/g%3E%3Crect x='0' y='210' width='480' height='60' fill='%23c3cfd6'/%3E%3Crect x='0' y='196' width='480' height='9' fill='%23dbe4e8'/%3E%3Cg transform='translate(240 196)'%3E%3Ccircle cx='0' cy='-96' r='17' fill='%23f0c39c'/%3E%3Cpath d='M-11 -80 q22 -9 32 8 l12 42 q3 11 -10 12 l-12 -30 z' fill='%232ec5d4'/%3E%3Cpath d='M-4 -44 q-10 32 -34 44' stroke='%23f7f4ee' stroke-width='12' stroke-linecap='round' fill='none'/%3E%3Cpath d='M14 -44 q22 16 18 44' stroke='%23f7f4ee' stroke-width='12' stroke-linecap='round' fill='none'/%3E%3Cpath d='M28 -66 q34 -20 56 -10' stroke='%23ff5a5f' stroke-width='10' stroke-linecap='round' fill='none'/%3E%3C/g%3E%3C/svg%3E">
+            <span class="ywb-vcard__play" aria-hidden="true">▶</span>
+          </div>
+          <div class="ywb-vcard__body">
+            <h4>清晨六点的天桥：城市探索系列第三集</h4>
+            <p>在早高峰到来之前，把一座城市的天桥当作舞台。和舞者一起走过三个不同的街区。</p>
+            <div class="ywb-vcard__foot">
+              <span class="ywb-vcard__author"><span class="ywb-avatar" style="background:#5f8163">星</span><span>星野影像</span></span>
+              <span>9.9 万次播放</span>
+            </div>
+            <div class="ywb-vcard__actions">
+              <button class="ywb-icon-btn ywb-like-btn" aria-label="点赞">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.6-7-9.6A4.4 4.4 0 0 1 12 7a4.4 4.4 0 0 1 7 3.4c0 5-7 9.6-7 9.6z"/></svg>
+                <span class="ywb-like-num">3614</span>
+              </button>
+              <button class="ywb-icon-btn ywb-save-btn" aria-label="收藏">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h12v18l-6-4.5L6 21z"/></svg>
+                收藏
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="ywb-vcard" data-cat="访谈">
+          <div class="ywb-vcard__cover">
+            <span class="ywb-tag ywb-tag--ink">访谈</span>
+            <img alt="视频封面：舞团排练后在地板上围坐交流的访谈现场" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Crect width='480' height='270' fill='%23e7e2f4'/%3E%3Crect x='0' y='196' width='480' height='74' fill='%23cfc6e4'/%3E%3Crect x='40' y='38' width='120' height='160' rx='8' fill='%23ffffff' opacity='0.6'/%3E%3Cg transform='translate(150 190)'%3E%3Ccircle cx='0' cy='-80' r='17' fill='%23eabf99'/%3E%3Cpath d='M-11 -64 q22 -9 32 8 l12 38 q3 11 -10 12 l-12 -28 z' fill='%237b6cf6'/%3E%3Cpath d='M-30 0 h60 l8 20 h-76 z' fill='%233c3a66'/%3E%3C/g%3E%3Cg transform='translate(236 194)'%3E%3Ccircle cx='0' cy='-84' r='17' fill='%23f0c8a1'/%3E%3Cpath d='M-11 -68 q22 -9 32 8 l12 40 q3 11 -10 12 l-12 -30 z' fill='%232ec5d4'/%3E%3Cpath d='M-30 0 h60 l8 20 h-76 z' fill='%233c3a66'/%3E%3C/g%3E%3Cg transform='translate(322 190)'%3E%3Ccircle cx='0' cy='-76' r='16' fill='%23e6b894'/%3E%3Cpath d='M-10 -60 q20 -8 30 7 l11 36 q3 10 -9 11 l-11 -26 z' fill='%23ff5a5f'/%3E%3Cpath d='M-28 0 h56 l7 20 h-70 z' fill='%233c3a66'/%3E%3C/g%3E%3C/svg%3E">
+            <span class="ywb-vcard__play" aria-hidden="true">▶</span>
+          </div>
+          <div class="ywb-vcard__body">
+            <h4>独立舞团的第三年：钱、场地与人怎么撑过来</h4>
+            <p>不讲光环，只讲账本。一个八人舞团的创办者聊真实的运营压力与坚持的理由。</p>
+            <div class="ywb-vcard__foot">
+              <span class="ywb-vcard__author"><span class="ywb-avatar" style="background:#7b6cf6">艺</span><span>艺舞吧访谈组</span></span>
+              <span>5.4 万次播放</span>
+            </div>
+            <div class="ywb-vcard__actions">
+              <button class="ywb-icon-btn ywb-like-btn" aria-label="点赞">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.6-7-9.6A4.4 4.4 0 0 1 12 7a4.4 4.4 0 0 1 7 3.4c0 5-7 9.6-7 9.6z"/></svg>
+                <span class="ywb-like-num">2812</span>
+              </button>
+              <button class="ywb-icon-btn ywb-save-btn" aria-label="收藏">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h12v18l-6-4.5L6 21z"/></svg>
+                收藏
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="ywb-vcard" data-cat="现代舞">
+          <div class="ywb-vcard__cover">
+            <span class="ywb-tag ywb-tag--ink">现代舞</span>
+            <img alt="视频封面：剧场舞台顶上单束光下的现代舞独舞身影" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Crect width='480' height='270' fill='%23121428'/%3E%3Cpath d='M240 0 L120 270 H360 Z' fill='%23ffc94d' opacity='0.14'/%3E%3Cpath d='M240 0 L190 270 H290 Z' fill='%23ffc94d' opacity='0.16'/%3E%3Crect x='0' y='226' width='480' height='44' fill='%230a0c1c'/%3E%3Cg transform='translate(240 214)'%3E%3Ccircle cx='0' cy='-120' r='16' fill='%23f4e6c8'/%3E%3Cpath d='M-10 -104 q20 -8 30 7 l14 48 q3 11 -10 12 l-14 -34 z' fill='%23f4f1ff'/%3E%3Cpath d='M-4 -50 q-12 34 -40 48' stroke='%23f4f1ff' stroke-width='11' stroke-linecap='round' fill='none'/%3E%3Cpath d='M14 -50 q26 20 22 52' stroke='%23f4f1ff' stroke-width='11' stroke-linecap='round' fill='none'/%3E%3Cpath d='M28 -84 q40 -18 58 2' stroke='%23ff5a5f' stroke-width='9' stroke-linecap='round' fill='none'/%3E%3C/g%3E%3Crect x='0' y='0' width='480' height='270' fill='none' stroke='%23ffffff' stroke-opacity='0.06' stroke-width='14'/%3E%3C/svg%3E">
+            <span class="ywb-vcard__play" aria-hidden="true">▶</span>
+          </div>
+          <div class="ywb-vcard__body">
+            <h4>一束光能做什么：极简舞台的编排实验</h4>
+            <p>只用一束顶光、一块黑幕，编导尝试让观众的注意力回到身体本身。</p>
+            <div class="ywb-vcard__foot">
+              <span class="ywb-vcard__author"><span class="ywb-avatar" style="background:#161a2e">林</span><span>林之遥</span></span>
+              <span>13.1 万次播放</span>
+            </div>
+            <div class="ywb-vcard__actions">
+              <button class="ywb-icon-btn ywb-like-btn" aria-label="点赞">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.6-7-9.6A4.4 4.4 0 0 1 12 7a4.4 4.4 0 0 1 7 3.4c0 5-7 9.6-7 9.6z"/></svg>
+                <span class="ywb-like-num">6149</span>
+              </button>
+              <button class="ywb-icon-btn ywb-save-btn" aria-label="收藏">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h12v18l-6-4.5L6 21z"/></svg>
+                收藏
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="ywb-vcard" data-cat="教程">
+          <div class="ywb-vcard__cover">
+            <span class="ywb-tag ywb-tag--ink">教程</span>
+            <img alt="视频封面：剪辑软件时间线上舞蹈片段的调色与卡点处理" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Crect width='480' height='270' fill='%23202334'/%3E%3Crect x='24' y='26' width='432' height='128' rx='8' fill='%232c3048'/%3E%3Crect x='40' y='42' width='130' height='96' rx='5' fill='%237b6cf6' opacity='0.55'/%3E%3Crect x='180' y='42' width='130' height='96' rx='5' fill='%232ec5d4' opacity='0.45'/%3E%3Crect x='320' y='42' width='120' height='96' rx='5' fill='%23ff5a5f' opacity='0.45'/%3E%3Crect x='24' y='168' width='432' height='20' rx='5' fill='%23363b56'/%3E%3Crect x='40' y='172' width='94' height='12' rx='4' fill='%23ffc94d'/%3E%3Crect x='146' y='172' width='62' height='12' rx='4' fill='%23ffc94d' opacity='0.7'/%3E%3Crect x='220' y='172' width='140' height='12' rx='4' fill='%23ffc94d' opacity='0.5'/%3E%3Crect x='24' y='200' width='432' height='20' rx='5' fill='%23363b56'/%3E%3Crect x='120' y='204' width='180' height='12' rx='4' fill='%238ee6ff' opacity='0.6'/%3E%3Ccircle cx='424' cy='210' r='6' fill='%23ffffff' opacity='0.6'/%3E%3C/svg%3E">
+            <span class="ywb-vcard__play" aria-hidden="true">▶</span>
+          </div>
+          <div class="ywb-vcard__body">
+            <h4>舞蹈视频卡点剪辑思路：先听呼吸再对鼓点</h4>
+            <p>为什么有些舞蹈混剪看起来很"碎"？三个层级的节奏对齐方法，附工程文件结构说明。</p>
+            <div class="ywb-vcard__foot">
+              <span class="ywb-vcard__author"><span class="ywb-avatar" style="background:#2a3050">周</span><span>周微</span></span>
+              <span>17.5 万次播放</span>
+            </div>
+            <div class="ywb-vcard__actions">
+              <button class="ywb-icon-btn ywb-like-btn" aria-label="点赞">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.6-7-9.6A4.4 4.4 0 0 1 12 7a4.4 4.4 0 0 1 7 3.4c0 5-7 9.6-7 9.6z"/></svg>
+                <span class="ywb-like-num">6688</span>
+              </button>
+              <button class="ywb-icon-btn ywb-save-btn" aria-label="收藏">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h12v18l-6-4.5L6 21z"/></svg>
+                收藏
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="ywb-vcard" data-cat="城市">
+          <div class="ywb-vcard__cover">
+            <span class="ywb-tag ywb-tag--ink">城市</span>
+            <img alt="视频封面：旧厂房改造空间内舞者与工业楼梯的合影构图" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Crect width='480' height='270' fill='%23d9d3c8'/%3E%3Crect x='0' y='206' width='480' height='64' fill='%23b6ad9e'/%3E%3Cg stroke='%238b8478' stroke-width='7' fill='none'%3E%3Cpath d='M40 206 V70 H160 V126'/%3E%3Cpath d='M300 206 V110 H440 V60'/%3E%3C/g%3E%3Crect x='176' y='48' width='128' height='158' fill='%23a89e8e' opacity='0.7'/%3E%3Crect x='192' y='66' width='96' height='120' fill='%23e8e2d6'/%3E%3Cg transform='translate(240 196)'%3E%3Ccircle cx='0' cy='-84' r='15' fill='%23e6bb94'/%3E%3Cpath d='M-10 -70 q20 -8 30 7 l11 36 q3 10 -9 11 l-11 -26 z' fill='%232a3050'/%3E%3Cpath d='M-3 -40 q-10 28 -30 38' stroke='%23f7f4ee' stroke-width='11' stroke-linecap='round' fill='none'/%3E%3Cpath d='M13 -40 q20 14 16 38' stroke='%23f7f4ee' stroke-width='11' stroke-linecap='round' fill='none'/%3E%3Cpath d='M24 -58 q30 -16 50 -4' stroke='%23ffc94d' stroke-width='9' stroke-linecap='round' fill='none'/%3E%3C/g%3E%3C/svg%3E">
+            <span class="ywb-vcard__play" aria-hidden="true">▶</span>
+          </div>
+          <div class="ywb-vcard__body">
+            <h4>旧厂房里的身体：工业空间的编舞取景实验</h4>
+            <p>斑驳墙面、锈蚀楼梯与舞者的线条如何对话？一次场地与编排的相互妥协记录。</p>
+            <div class="ywb-vcard__foot">
+              <span class="ywb-vcard__author"><span class="ywb-avatar" style="background:#8b8478">星</span><span>星野影像</span></span>
+              <span>7.3 万次播放</span>
+            </div>
+            <div class="ywb-vcard__actions">
+              <button class="ywb-icon-btn ywb-like-btn" aria-label="点赞">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.6-7-9.6A4.4 4.4 0 0 1 12 7a4.4 4.4 0 0 1 7 3.4c0 5-7 9.6-7 9.6z"/></svg>
+                <span class="ywb-like-num">3041</span>
+              </button>
+              <button class="ywb-icon-btn ywb-save-btn" aria-label="收藏">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h12v18l-6-4.5L6 21z"/></svg>
+                收藏
+              </button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 专题企划 -->
+  <section class="ywb-section ywb-special" id="ywb-special">
+    <div class="ywb-wrap">
+      <div class="ywb-sec-head">
+        <div>
+          <span class="ywb-eyebrow">Special Projects</span>
+          <h2 class="ywb-sec-title">专题企划：正在进行的四条内容线索</h2>
+          <p class="ywb-sec-desc">每季由编辑团队与社区共同策划，围绕具体问题展开，持续更新。</p>
+        </div>
+      </div>
+      <div class="ywb-special__grid">
+        <article class="ywb-special-card ywb-special-card--wide">
+          <img alt="专题封面：城市夜晚天台上跳舞的人群剪影与远处霓虹" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 960 420'%3E%3Cdefs%3E%3ClinearGradient id='sp1' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%2318203e'/%3E%3Cstop offset='0.62' stop-color='%23402a56'/%3E%3Cstop offset='1' stop-color='%23733f52'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='960' height='420' fill='url(%23sp1)'/%3E%3Cg fill='%230e1226' opacity='0.85'%3E%3Crect x='0' y='230' width='110' height='190'/%3E%3Crect x='130' y='196' width='90' height='224'/%3E%3Crect x='700' y='210' width='104' height='210'/%3E%3Crect x='840' y='250' width='120' height='170'/%3E%3C/g%3E%3Cg fill='%23ffc94d' opacity='0.75'%3E%3Crect x='22' y='252' width='10' height='10'/%3E%3Crect x='56' y='286' width='10' height='10'/%3E%3Crect x='150' y='222' width='10' height='10'/%3E%3Crect x='726' y='236' width='10' height='10'/%3E%3Crect x='770' y='276' width='10' height='10'/%3E%3Crect x='870' y='286' width='10' height='10'/%3E%3C/g%3E%3Cg fill='%23ff5a5f' opacity='0.8'%3E%3Crect x='90' y='320' width='10' height='10'/%3E%3Crect x='800' y='330' width='10' height='10'/%3E%3C/g%3E%3Crect x='0' y='338' width='960' height='82' fill='%23171a30'/%3E%3Cg fill='%231a1c2e'%3E%3Ccircle cx='330' cy='262' r='17'/%3E%3Cpath d='M318 280 q26 -10 38 10 l14 48 h-30 l-14 -36 z'/%3E%3Ccircle cx='420' cy='252' r='17'/%3E%3Cpath d='M408 270 q26 -10 38 10 l14 48 h-30 l-14 -36 z'/%3E%3Ccircle cx='512' cy='266' r='17'/%3E%3Cpath d='M500 284 q26 -10 38 10 l14 48 h-30 l-14 -36 z'/%3E%3C/g%3E%3Cpath d='M360 322 q22 -28 50 -6' stroke='%23ff5a5f' stroke-width='7' stroke-linecap='round' fill='none'/%3E%3Cpath d='M452 318 q22 -26 50 -4' stroke='%232ec5d4' stroke-width='7' stroke-linecap='round' fill='none'/%3E%3C/svg%3E">
+          <div class="ywb-special-card__body">
+            <span class="ywb-special-card__status"><i></i>更新至第 3 期 · 12 支作品</span>
+            <h3>城市律动 · 2026 秋冬企划</h3>
+            <p>把舞台搬进天台、地铁站口、旧厂房与菜市场。我们邀请十二位舞者，在各自熟悉的城市角落完成一支三分钟的独舞，记录身体与空间的相互识别。</p>
+            <div class="ywb-special-card__foot"><span>策划：艺舞吧编辑部</span><span>联合：五城舞团</span><span>参与投稿 286 支</span></div>
+          </div>
+        </article>
+
+        <article class="ywb-special-card">
+          <img alt="专题封面：编舞者摊开的笔记与手绘动作分解图" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 380'%3E%3Crect width='480' height='380' fill='%23efe7d8'/%3E%3Crect x='40' y='44' width='400' height='300' rx='8' fill='%23fffaf0'/%3E%3Cg stroke='%23d9c9ae' stroke-width='2'%3E%3Cpath d='M40 106 h400'/%3E%3Cpath d='M64 140 h340'/%3E%3Cpath d='M64 176 h300'/%3E%3Cpath d='M64 212 h330'/%3E%3Cpath d='M64 248 h280'/%3E%3C/g%3E%3Cg stroke='%23ff5a5f' stroke-width='3' fill='none'%3E%3Cpath d='M70 288 q40 -50 90 -10 q30 24 70 0'/%3E%3Ccircle cx='196' cy='278' r='9'/%3E%3C/g%3E%3Cg stroke='%232ec5d4' stroke-width='3' fill='none'%3E%3Cpath d='M240 300 q40 -40 88 -6 q26 20 62 -4'/%3E%3Ccircle cx='356' cy='294' r='8'/%3E%3C/g%3E%3Crect x='330' y='60' width='86' height='26' rx='6' fill='%23ffc94d' opacity='0.7'/%3E%3C/svg%3E">
+          <div class="ywb-special-card__body">
+            <span class="ywb-special-card__status"><i></i>长期更新 · 每周三</span>
+            <h3>编舞者的笔记</h3>
+            <p>把那些没被用上的构思、失败的动作和半途改变的方案摊开来看。</p>
+            <div class="ywb-special-card__foot"><span>已更新 26 期</span><span>投稿开放</span></div>
+          </div>
+        </article>
+
+        <article class="ywb-special-card">
+          <img alt="专题封面：舞蹈教室镜子里整齐排列的练习者身影" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 380'%3E%3Crect width='480' height='380' fill='%23e6eef0'/%3E%3Crect x='0' y='250' width='480' height='130' fill='%23cddde0'/%3E%3Crect x='24' y='36' width='432' height='230' rx='6' fill='%23f4fbfc' stroke='%23b7ccd1' stroke-width='3'/%3E%3Cg fill='%232a3050' opacity='0.7'%3E%3Ccircle cx='100' cy='150' r='14'/%3E%3Cpath d='M90 166 q22 -8 32 8 l10 40 h-24 l-10 -30 z'/%3E%3Ccircle cx='184' cy='150' r='14'/%3E%3Cpath d='M174 166 q22 -8 32 8 l10 40 h-24 l-10 -30 z'/%3E%3Ccircle cx='268' cy='150' r='14'/%3E%3Cpath d='M258 166 q22 -8 32 8 l10 40 h-24 l-10 -30 z'/%3E%3Ccircle cx='352' cy='150' r='14'/%3E%3Cpath d='M342 166 q22 -8 32 8 l10 40 h-24 l-10 -30 z'/%3E%3C/g%3E%3Cg stroke='%23ffc94d' stroke-width='5' stroke-linecap='round'%3E%3Cpath d='M78 226 q22 -14 44 0'/%3E%3Cpath d='M162 226 q22 -14 44 0'/%3E%3Cpath d='M246 226 q22 -14 44 0'/%3E%3Cpath d='M330 226 q22 -14 44 0'/%3E%3C/g%3E%3Crect x='396' y='40' width='48' height='14' rx='7' fill='%23ff5a5f' opacity='0.6'/%3E%3C/svg%3E">
+          <div class="ywb-special-card__body">
+            <span class="ywb-special-card__status"><i></i>报名中 · 截止 12 月 20 日</span>
+            <h3>新人第一支作品</h3>
+            <p>为刚开始拍摄舞蹈影像的人准备的扶持计划，含拍摄模板与一对一反馈。</p>
+            <div class="ywb-special-card__foot"><span>报名 412 人</span><span>入选 30 位</span></div>
+          </div>
+        </article>
+
+        <article class="ywb-special-card">
+          <img alt="专题封面：录音间里舞者对麦克风讲述创作经历的侧影" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 380'%3E%3Crect width='480' height='380' fill='%23e4ddf2'/%3E%3Crect x='0' y='264' width='480' height='116' fill='%23cbc0e4'/%3E%3Crect x='300' y='48' width='140' height='180' rx='8' fill='%23f7f3ff' stroke='%23c3b4e3' stroke-width='3'/%3E%3Cg stroke='%23c3b4e3' stroke-width='4' stroke-linecap='round'%3E%3Cpath d='M326 90 h88'/%3E%3Cpath d='M326 122 h60'/%3E%3Cpath d='M326 154 h76'/%3E%3C/g%3E%3Cg transform='translate(150 250)'%3E%3Ccircle cx='0' cy='-100' r='24' fill='%23e8bb98'/%3E%3Cpath d='M-15 -76 q28 -11 40 11 l14 56 h-30 l-14 -46 z' fill='%237b6cf6'/%3E%3Cpath d='M-40 0 h80 l10 26 h-100 z' fill='%233c3a66'/%3E%3C/g%3E%3Cpath d='M196 190 q40 20 58 70' stroke='%232a3050' stroke-width='7' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='258' cy='266' r='15' fill='%232a3050'/%3E%3C/svg%3E">
+          <div class="ywb-special-card__body">
+            <span class="ywb-special-card__status"><i></i>已完结 · 8 位受访者</span>
+            <h3>身体会说话</h3>
+            <p>八场长访谈，聊伤病、年龄、审美与自我怀疑，不止于舞蹈。</p>
+            <div class="ywb-special-card__foot"><span>总时长 412 分钟</span><span>口碑 9.4</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 创作者矩阵 -->
+  <section class="ywb-section ywb-section--alt" id="ywb-creator">
+    <div class="ywb-wrap">
+      <div class="ywb-sec-head">
+        <div>
+          <span class="ywb-eyebrow">Creators</span>
+          <h2 class="ywb-sec-title">创作者矩阵：把身体经验变成影像的人</h2>
+          <p class="ywb-sec-desc">他们是编导、舞者、摄影师与教师，也是艺舞吧内容生态里最稳定的支柱。点击查看更多档案。</p>
+        </div>
+      </div>
+      <div class="ywb-creator-grid">
+        <article class="ywb-creator">
+          <div class="ywb-creator__top">
+            <div class="ywb-creator__ava" style="background:linear-gradient(135deg,#161a2e,#43406e)">林</div>
+            <div>
+              <div class="ywb-creator__name">林之遥</div>
+              <div class="ywb-creator__field">现代舞编导 · 认证创作者</div>
+            </div>
+          </div>
+          <p>偏爱极简舞台与长镜头，作品常以单一空间与重复动作为线索。认为"看得见呼吸的影像"才是好影像。</p>
+          <div class="ywb-creator__stats">
+            <div><b>86</b>作品</div>
+            <div><b>12.4万</b>关注</div>
+            <div><b>4年</b>创作</div>
+          </div>
+          <div class="ywb-creator__foot">
+            <button class="ywb-btn ywb-btn--ghost ywb-btn--sm" data-author="林之遥|现代舞编导，作品以极简舞台与长镜头见长，长期在艺舞吧更新编舞笔记与剧场实验作品。|极简舞台 · 长镜头 · 剧场实验">作者档案</button>
+            <button class="ywb-btn ywb-btn--ghost ywb-btn--sm" data-scroll="#ywb-feature">看作品</button>
+          </div>
+        </article>
+
+        <article class="ywb-creator">
+          <div class="ywb-creator__top">
+            <div class="ywb-creator__ava" style="background:linear-gradient(135deg,#ff5a5f,#ffc94d)">阿</div>
+            <div>
+              <div class="ywb-creator__name">阿斯</div>
+              <div class="ywb-creator__field">街舞 · 新人训练记录</div>
+            </div>
+          </div>
+          <p>白天上班晚上练舞，把每次失败都留在镜头里。他的训练日志被很多初学者当作入门路线图。</p>
+          <div class="ywb-creator__stats">
+            <div><b>64</b>作品</div>
+            <div><b>9.8万</b>关注</div>
+            <div><b>3年</b>创作</div>
+          </div>
+          <div class="ywb-creator__foot">
+            <button class="ywb-btn ywb-btn--ghost ywb-btn--sm" data-author="阿斯|街舞爱好者，以真实的训练日志与失败记录获得关注，擅长地板动作与基础教学。|地板动作 · 训练日志 · 新手友好">作者档案</button>
+            <button class="ywb-btn ywb-btn--ghost ywb-btn--sm" data-scroll="#ywb-stream">看作品</button>
+          </div>
+        </article>
+
+        <article class="ywb-creator">
+          <div class="ywb-creator__top">
+            <div class="ywb-creator__ava" style="background:linear-gradient(135deg,#5f8163,#b8483f)">沈</div>
+            <div>
+              <div class="ywb-creator__name">沈青禾</div>
+              <div class="ywb-creator__field">国风身韵 · 教学作者</div>
+            </div>
+          </div>
+          <p>舞蹈教师出身，擅长把身韵训练拆成可练习的步骤。她的水袖教学视频被多个工作室当作辅助教材。</p>
+          <div class="ywb-creator__stats">
+            <div><b>112</b>作品</div>
+            <div><b>15.6万</b>关注</div>
+            <div><b>6年</b>创作</div>
+          </div>
+          <div class="ywb-creator__foot">
+            <button class="ywb-btn ywb-btn--ghost ywb-btn--sm" data-author="沈青禾|国风舞蹈教师，专注身韵与水袖教学，内容兼顾训练方法与舞台呈现。|身韵训练 · 水袖 · 教学体系">作者档案</button>
+            <button class="ywb-btn ywb-btn--ghost ywb-btn--sm" data-scroll="#ywb-stream">看作品</button>
+          </div>
+        </article>
+
+        <article class="ywb-creator">
+          <div class="ywb-creator__top">
+            <div class="ywb-creator__ava" style="background:linear-gradient(135deg,#2ec5d4,#2a3050)">周</div>
+            <div>
+              <div class="ywb-creator__name">周微</div>
+              <div class="ywb-creator__field">舞蹈摄影 · 后期教学</div>
+            </div>
+          </div>
+          <p>从广告公司转向舞蹈影像的摄影师，热衷讲"如何用小设备拍出体面画面"，教程务实不藏私。</p>
+          <div class="ywb-creator__stats">
+            <div><b>58</b>作品</div>
+            <div><b>11.2万</b>关注</div>
+            <div><b>5年</b>创作</div>
+          </div>
+          <div class="ywb-creator__foot">
+            <button class="ywb-btn ywb-btn--ghost ywb-btn--sm" data-author="周微|舞蹈影像摄影师与剪辑师，擅长移动端拍摄方案与节奏剪辑教学。|拍摄技巧 · 剪辑思路 · 设备方案">作者档案</button>
+            <button class="ywb-btn ywb-btn--ghost ywb-btn--sm" data-scroll="#ywb-stream">看作品</button>
+          </div>
+        </article>
+
+        <article class="ywb-creator">
+          <div class="ywb-creator__top">
+            <div class="ywb-creator__ava" style="background:linear-gradient(135deg,#8b8478,#b6ad9e)">星</div>
+            <div>
+              <div class="ywb-creator__name">星野影像</div>
+              <div class="ywb-creator__field">城市探索 · 团队账号</div>
+            </div>
+          </div>
+          <p>三人小团队，专注城市空间与身体的对话。他们的取景地清单被社区反复借用，也被城市观察者关注。</p>
+          <div class="ywb-creator__stats">
+            <div><b>41</b>作品</div>
+            <div><b>8.7万</b>关注</div>
+            <div><b>2年</b>创作</div>
+          </div>
+          <div class="ywb-creator__foot">
+            <button class="ywb-btn ywb-btn--ghost ywb-btn--sm" data-author="星野影像|城市舞蹈影像团队，擅长把非标准空间转化为舞台，作品多在清晨与深夜拍摄。|城市探索 · 空间取景 · 团队协作">作者档案</button>
+            <button class="ywb-btn ywb-btn--ghost ywb-btn--sm" data-scroll="#ywb-stream">看作品</button>
+          </div>
+        </article>
+
+        <article class="ywb-creator">
+          <div class="ywb-creator__top">
+            <div class="ywb-creator__ava" style="background:linear-gradient(135deg,#7b6cf6,#ff5a5f)">小</div>
+            <div>
+              <div class="ywb-creator__name">小满</div>
+              <div class="ywb-creator__field">即兴 · 治愈影像</div>
+            </div>
+          </div>
+          <p>非科班出身，把舞蹈当作自我照顾的方式。镜头多为固定机位，安静、日常，却常有很强的共鸣。</p>
+          <div class="ywb-creator__stats">
+            <div><b>73</b>作品</div>
+            <div><b>16.9万</b>关注</div>
+            <div><b>3年</b>创作</div>
+          </div>
+          <div class="ywb-creator__foot">
+            <button class="ywb-btn ywb-btn--ghost ywb-btn--sm" data-author="小满|即兴舞蹈记录者，关注普通人的身体感受，作品以居家即兴与治愈影像为主。|即兴 · 日常记录 · 情绪表达">作者档案</button>
+            <button class="ywb-btn ywb-btn--ghost ywb-btn--sm" data-scroll="#ywb-stream">看作品</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 故事随笔 + 作品墙 -->
+  <section class="ywb-section ywb-story" id="ywb-story">
+    <div class="ywb-wrap">
+      <div class="ywb-sec-head">
+        <div>
+          <span class="ywb-eyebrow">Stories</span>
+          <h2 class="ywb-sec-title">故事随笔：镜头之外的那些时刻</h2>
+          <p class="ywb-sec-desc">影像之外，文字保留了更多细节。三篇来自创作者与观众的随笔。</p>
+        </div>
+      </div>
+      <div class="ywb-story__grid">
+        <article class="ywb-story-card">
+          <div class="ywb-story-card__cover">
+            <span class="ywb-tag ywb-tag--live">幕后</span>
+            <img alt="随笔配图：排练厅地上散落的护膝、水杯与写满标记的乐谱" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Crect width='480' height='270' fill='%23e9e2d6'/%3E%3Crect x='0' y='176' width='480' height='94' fill='%23d3c7b6'/%3E%3Crect x='52' y='150' width='96' height='26' rx='13' fill='%232a3050'/%3E%3Ccircle cx='100' cy='126' r='26' fill='%232a3050' opacity='0.3'/%3E%3Crect x='180' y='116' width='44' height='60' rx='9' fill='%23ffffff'/%3E%3Crect x='180' y='116' width='44' height='18' rx='9' fill='%23ff5a5f' opacity='0.7'/%3E%3Crect x='252' y='140' width='150' height='34' rx='4' fill='%23fffaf0' stroke='%23cbbda6' stroke-width='2'/%3E%3Cg stroke='%23b6a891' stroke-width='2'%3E%3Cpath d='M264 152 h126'/%3E%3Cpath d='M264 162 h96'/%3E%3C/g%3E%3Ccircle cx='416' cy='96' r='22' fill='%23ffc94d' opacity='0.5'/%3E%3C/svg%3E">
+          </div>
+          <div class="ywb-story-card__body">
+            <div class="ywb-story-card__date">2026 · 11 · 08</div>
+            <h3>拍了三十七遍之后，我们决定保留那条失误的</h3>
+            <p>一个托举动作反复失败，所有人都在第四十次前沉默。最后成片用的是第三十七遍——她没站稳，但他扶住了，两人同时笑了。我们讨论很久，决定留下它。</p>
+            <div class="ywb-story-card__author">
+              <span class="ywb-avatar" style="background:#43406e;width:22px;height:22px;font-size:10px">林</span>
+              <span>林之遥 · 编导手记</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="ywb-story-card">
+          <div class="ywb-story-card__cover">
+            <span class="ywb-tag ywb-tag--cyan">观众</span>
+            <img alt="随笔配图：深夜书桌上的手机屏幕正播放舞蹈影像的画面" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Crect width='480' height='270' fill='%23222640'/%3E%3Crect x='120' y='26' width='240' height='218' rx='18' fill='%230e1122' stroke='%233c4265' stroke-width='3'/%3E%3Crect x='132' y='44' width='216' height='170' rx='8' fill='%23343a5e'/%3E%3Ccircle cx='240' cy='126' r='26' fill='%23ffffff' opacity='0.16'/%3E%3Cpath d='M232 114 l18 12 l-18 12 z' fill='%23ffc94d'/%3E%3Ccircle cx='240' cy='230' r='9' fill='%23ff5a5f' opacity='0.6'/%3E%3Crect x='40' y='70' width='56' height='10' rx='5' fill='%23ffc94d' opacity='0.35'/%3E%3Crect x='40' y='94' width='38' height='10' rx='5' fill='%23ffffff' opacity='0.16'/%3E%3Crect x='390' y='140' width='52' height='10' rx='5' fill='%232ec5d4' opacity='0.4'/%3E%3C/svg%3E">
+          </div>
+          <div class="ywb-story-card__body">
+            <div class="ywb-story-card__date">2026 · 10 · 29</div>
+            <h3>我在加班的深夜，看完了《练功房零点》</h3>
+            <p>本来只想随便点开，结果看到第四分钟就哭了。那种一个人反复做同一件事的孤独感太熟悉了。谢谢艺舞吧把这样的内容放到首页，而不是只推热闹的东西。</p>
+            <div class="ywb-story-card__author">
+              <span class="ywb-avatar" style="background:#2ec5d4;width:22px;height:22px;font-size:10px">观</span>
+              <span>社区观众 · 一条留言</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="ywb-story-card">
+          <div class="ywb-story-card__cover">
+            <span class="ywb-tag ywb-tag--soft" style="background:rgba(22,26,46,.72)">教学</span>
+            <img alt="随笔配图：教室木地板上用胶带贴出的走位标记与粉笔箭头" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Crect width='480' height='270' fill='%23f0eae0'/%3E%3Cg stroke='%23d8c9b2' stroke-width='2'%3E%3Cpath d='M0 54 h480'/%3E%3Cpath d='M0 108 h480'/%3E%3Cpath d='M0 162 h480'/%3E%3Cpath d='M0 216 h480'/%3E%3C/g%3E%3Cg stroke='%23ff5a5f' stroke-width='4' stroke-linecap='round' fill='none' opacity='0.8'%3E%3Cpath d='M70 210 q60 -40 120 0'/%3E%3Cpath d='M150 210 l-12 -10 M150 210 l-12 10'/%3E%3C/g%3E%3Cg stroke='%232ec5d4' stroke-width='4' stroke-linecap='round' fill='none' opacity='0.8'%3E%3Cpath d='M240 190 q60 -60 120 -6'/%3E%3Cpath d='M348 184 l-12 -8 M348 184 l-14 6'/%3E%3C/g%3E%3Crect x='300' y='60' width='120' height='8' rx='4' fill='%23c9b9a0'/%3E%3Crect x='300' y='80' width='80' height='8' rx='4' fill='%23c9b9a0' opacity='0.7'/%3E%3Ccircle cx='96' cy='90' r='18' fill='%23ffc94d' opacity='0.6'/%3E%3C/svg%3E">
+          </div>
+          <div class="ywb-story-card__body">
+            <div class="ywb-story-card__date">2026 · 10 · 16</div>
+            <h3>把"看起来很难"拆成四拍：我的教学整理法</h3>
+            <p>学生总说记不住动作。后来我把每个动作切成四拍，用胶带在地上标出落点，再录一段慢速版给他们。这个方法后来成了我在艺舞吧更新最多的系列。</p>
+            <div class="ywb-story-card__author">
+              <span class="ywb-avatar" style="background:#b8483f;width:22px;height:22px;font-size:10px">沈</span>
+              <span>沈青禾 · 教学随笔</span>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="ywb-sec-head" style="margin-top:56px">
+        <div>
+          <span class="ywb-eyebrow">Image Wall</span>
+          <h2 class="ywb-sec-title">作品墙：来自社区的身体切片</h2>
+          <p class="ywb-sec-desc">九张影像，九个不同的瞬间。它们未必完美，但都真实发生过。</p>
+        </div>
+      </div>
+      <div class="ywb-wall">
+        <div class="ywb-wall__item ywb-wall__item--lg">
+          <img alt="作品墙大图：黄昏河堤上逆光伸展的舞者剪影" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 620 520'%3E%3Cdefs%3E%3ClinearGradient id='w1' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23ffd6a5'/%3E%3Cstop offset='0.55' stop-color='%23ff9e80'/%3E%3Cstop offset='1' stop-color='%236a4c6e'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='620' height='520' fill='url(%23w1)'/%3E%3Ccircle cx='430' cy='150' r='62' fill='%23fff1d6' opacity='0.85'/%3E%3Cpath d='M0 420 Q160 380 320 420 T620 408 V520 H0 Z' fill='%234b3a5c' opacity='0.8'/%3E%3Cg transform='translate(300 400)' fill='%23271c33'%3E%3Ccircle cx='0' cy='-150' r='20'/%3E%3Cpath d='M-12 -128 q26 -10 38 8 l16 60 q3 12 -12 13 l-16 -40 z'/%3E%3Cpath d='M-6 -70 q-14 60 -60 96' stroke='%23271c33' stroke-width='13' stroke-linecap='round' fill='none'/%3E%3Cpath d='M16 -68 q40 30 34 92' stroke='%23271c33' stroke-width='13' stroke-linecap='round' fill='none'/%3E%3Cpath d='M30 -110 q52 -32 86 -12' stroke='%23271c33' stroke-width='11' stroke-linecap='round' fill='none'/%3E%3C/g%3E%3Cpath d='M0 470 Q200 440 400 470' stroke='%23fff1d6' stroke-opacity='0.4' stroke-width='3' fill='none'/%3E%3C/svg%3E">
+          <span>黄昏河堤 · 独舞</span>
+        </div>
+        <div class="ywb-wall__item ywb-wall__item--md">
+          <img alt="作品墙中图：排练镜前举手定格的双人练习画面" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 620 260'%3E%3Crect width='620' height='260' fill='%23dfe4ee'/%3E%3Crect x='0' y='190' width='620' height='70' fill='%23c3cbda'/%3E%3Crect x='40' y='24' width='540' height='150' rx='6' fill='%23f2f6fb' stroke='%23bcc6d6' stroke-width='3'/%3E%3Cg fill='%232a3050' opacity='0.8'%3E%3Ccircle cx='220' cy='90' r='16'/%3E%3Cpath d='M208 108 q24 -9 36 9 l14 44 q3 11 -11 12 l-14 -30 z'/%3E%3Ccircle cx='330' cy='88' r='16'/%3E%3Cpath d='M318 106 q24 -9 36 9 l14 44 q3 11 -11 12 l-14 -30 z'/%3E%3C/g%3E%3Cpath d='M242 112 q40 -34 74 -2' stroke='%23ff5a5f' stroke-width='6' stroke-linecap='round' fill='none'/%3E%3C/svg%3E">
+          <span>排练厅 · 双手练习</span>
+        </div>
+        <div class="ywb-wall__item ywb-wall__item--sm">
+          <img alt="作品墙小图：木质地板上赤足旋转的局部特写" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 240'%3E%3Crect width='300' height='240' fill='%23e4cdb2'/%3E%3Cg stroke='%23c9a986' stroke-width='3'%3E%3Cpath d='M0 60 h300'/%3E%3Cpath d='M0 120 h300'/%3E%3Cpath d='M0 180 h300'/%3E%3C/g%3E%3Cellipse cx='150' cy='140' rx='34' ry='58' fill='%23f2d3b3' transform='rotate(18 150 140)'/%3E%3Ccircle cx='150' cy='80' r='7' fill='%23d99a6c'/%3E%3C/svg%3E">
+          <span>赤足</span>
+        </div>
+        <div class="ywb-wall__item ywb-wall__item--sm">
+          <img alt="作品墙小图：舞台侧幕缝隙里透出的光与脚踝" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 240'%3E%3Crect width='300' height='240' fill='%23101426'/%3E%3Cpath d='M120 0 L190 240 H80 Z' fill='%23ffc94d' opacity='0.36'/%3E%3Cpath d='M170 240 q10 -60 -10 -100' stroke='%23f4e6c8' stroke-width='13' stroke-linecap='round' fill='none' opacity='0.9'/%3E%3Cpath d='M150 240 q20 -50 0 -86' stroke='%23f4e6c8' stroke-width='12' stroke-linecap='round' fill='none' opacity='0.7'/%3E%3C/svg%3E">
+          <span>侧幕</span>
+        </div>
+        <div class="ywb-wall__item ywb-wall__item--sm">
+          <img alt="作品墙小图：雨窗玻璃上舞者模糊的倒影" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 240'%3E%3Crect width='300' height='240' fill='%236d7f96'/%3E%3Cg stroke='%23a9bccf' stroke-width='2' opacity='0.55'%3E%3Cpath d='M40 0 v240'/%3E%3Cpath d='M150 0 v240'/%3E%3Cpath d='M260 0 v240'/%3E%3Cpath d='M0 80 h300'/%3E%3Cpath d='M0 168 h300'/%3E%3C/g%3E%3Cg fill='%23dbe6ef' opacity='0.55'%3E%3Ccircle cx='150' cy='96' r='17'/%3E%3Cpath d='M138 114 q24 -9 36 9 l14 40 h-28 l-14 -30 z'/%3E%3C/g%3E%3Cg stroke='%23eaf2f8' stroke-width='2' opacity='0.5'%3E%3Cpath d='M60 40 l-6 24'/%3E%3Cpath d='M96 120 l-6 22'/%3E%3Cpath d='M214 62 l-6 26'/%3E%3C/ g%3E%3C/svg%3E">
+          <span>雨窗</span>
+        </div>
+        <div class="ywb-wall__item ywb-wall__item--md">
+          <img alt="作品墙中图：街头滑板广场上腾空翻转的街舞少年" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 620 260'%3E%3Crect width='620' height='260' fill='%231b2140'/%3E%3Crect x='0' y='196' width='620' height='64' fill='%230f1326'/%3E%3Cg stroke='%232ec5d4' stroke-width='3' opacity='0.45' fill='none'%3E%3Cpath d='M60 196 V76 H200'/%3E%3Cpath d='M420 196 V66 H560'/%3E%3C/g%3E%3Cg transform='translate(310 190)' fill='%23ffc94d'%3E%3Ccircle cx='-4' cy='-116' r='17'/%3E%3Cpath d='M-16 -98 q24 -10 36 8 l12 44 q3 11 -11 12 l-12 -28'/%3E%3Cpath d='M-8 -46 q-40 8 -62 -6' stroke='%23ffc94d' stroke-width='12' stroke-linecap='round' fill='none'/%3E%3Cpath d='M12 -44 q46 6 62 -30' stroke='%23ff5a5f' stroke-width='12' stroke-linecap='round' fill='none'/%3E%3C/g%3E%3C/svg%3E">
+          <span>街头 · 腾空</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 榜单 + 评价 -->
+  <section class="ywb-section ywb-section--alt" id="ywb-rank">
+    <div class="ywb-wrap">
+      <div class="ywb-sec-head">
+        <div>
+          <span class="ywb-eyebrow">Charts & Voices</span>
+          <h2 class="ywb-sec-title">排行榜与社区口碑</h2>
+          <p class="ywb-sec-desc">榜单由播放、收藏、评论与完播率综合计算，每周一更新。口碑来自真实用户评价。</p>
+        </div>
+      </div>
+      <div class="ywb-rank__grid">
+        <div class="ywb-rank-card">
+          <h3><i>热</i>本周热度榜</h3>
+          <ul class="ywb-rank-list">
+            <li><span class="ywb-rank-num">1</span><span class="ywb-rank-name">手机也能拍好舞蹈：光线、机位与收声</span><span class="ywb-rank-val">20.3 万</span></li>
+            <li><span class="ywb-rank-num">2</span><span class="ywb-rank-name">从零学 Freeze：六周训练日志</span><span class="ywb-rank-val">15.2 万</span></li>
+            <li><span class="ywb-rank-num">3</span><span class="ywb-rank-name">一束光能做什么：极简舞台实验</span><span class="ywb-rank-val">13.1 万</span></li>
+            <li><span class="ywb-rank-num">4</span><span class="ywb-rank-name">下班后十五分钟：客厅即兴练习</span><span class="ywb-rank-val">12.4 万</span></li>
+            <li><span class="ywb-rank-num">5</span><span class="ywb-rank-name">水袖不怕甩不出弧线：三种发力</span><span class="ywb-rank-val">11.7 万</span></li>
+          </ul>
+        </div>
+        <div class="ywb-rank-card">
+          <h3><i>新</i>新人上升榜</h3>
+          <ul class="ywb-rank-list">
+            <li><span class="ywb-rank-num">1</span><span class="ywb-rank-name">阿岚 · 爵士基础跟练</span><span class="ywb-rank-val">↑ 62 位</span></li>
+            <li><span class="ywb-rank-num">2</span><span class="ywb-rank-name">木木 · 校庆舞台纪录</span><span class="ywb-rank-val">↑ 51 位</span></li>
+            <li><span class="ywb-rank-num">3</span><span class="ywb-rank-name">半拍 · 慢动作拆解</span><span class="ywb-rank-val">↑ 44 位</span></li>
+            <li><span class="ywb-rank-num">4</span><span class="ywb-rank-name">南枝 · 昆曲身段融合</span><span class="ywb-rank-val">↑ 38 位</span></li>
+            <li><span class="ywb-rank-num">5</span><span class="ywb-rank-name">阿夏 · 行李箱当道具</span><span class="ywb-rank-val">↑ 29 位</span></li>
+          </ul>
+        </div>
+        <div class="ywb-rank-card">
+          <h3><i>口</i>口碑推荐榜</h3>
+          <ul class="ywb-rank-list">
+            <li><span class="ywb-rank-num">1</span><span class="ywb-rank-name">身体会说话 · 八场长访谈</span><span class="ywb-rank-val">9.4 分</span></li>
+            <li><span class="ywb-rank-num">2</span><span class="ywb-rank-name">《练功房零点》</span><span class="ywb-rank-val">9.3 分</span></li>
+            <li><span class="ywb-rank-num">3</span><span class="ywb-rank-name">城市律动 · 秋冬企划</span><span class="ywb-rank-val">9.1 分</span></li>
+            <li><span class="ywb-rank-num">4</span><span class="ywb-rank-name">双人舞的重心在哪里</span><span class="ywb-rank-val">8.9 分</span></li>
+            <li><span class="ywb-rank-num">5</span><span class="ywb-rank-name">旧厂房里的身体</span><span class="ywb-rank-val">8.7 分</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="ywb-sec-head" style="margin-top:52px">
+        <div>
+          <span class="ywb-eyebrow">Community Voices</span>
+          <h2 class="ywb-sec-title">他们怎么说艺舞吧</h2>
+        </div>
+      </div>
+      <div class="ywb-review-grid">
+        <div class="ywb-review">
+          <p>很少有平台愿意把四分钟以上的长镜头放到显眼位置。作为舞者，我能感到这里的编辑是真的懂身体节奏的人，不只是做流量排序。</p>
+          <div class="ywb-review__who"><span class="ywb-avatar" style="background:#43406e;width:34px;height:34px;font-size:13px">喻</span><div><b>喻青</b><span>现代舞者 · 使用 2 年</span></div></div>
+        </div>
+        <div class="ywb-review">
+          <p>我是完全零基础，跟着艺舞吧的教程学了两支完整的舞。最喜欢的是他们不回避失败，反而把失败剪进去，让人觉得进步是可以被期待的。</p>
+          <div class="ywb-review__who"><span class="ywb-avatar" style="background:#ff5a5f;width:34px;height:34px;font-size:13px">早</span><div><b>早川</b><span>上班族 · 舞蹈练习半年</span></div></div>
+        </div>
+        <div class="ywb-review">
+          <p>作为舞蹈工作室负责人，我们在艺舞吧发布学员作品，反馈质量比很多大平台好得多。评论区会认真讨论动作，而不只是刷表情。</p>
+          <div class="ywb-review__who"><span class="ywb-avatar" style="background:#2ec5d4;width:34px;height:34px;font-size:13px">林</span><div><b>林间舞室</b><span>机构账号 · 合作 1 年</span></div></div>
+        </div>
+        <div class="ywb-review">
+          <p>专题做得比想象中深。城市律动那期里，舞者在菜市场跳独舞，一开始觉得奇怪，看完却觉得很对——身体本来就该属于生活现场。</p>
+          <div class="ywb-review__who"><span class="ywb-avatar" style="background:#b8483f;width:34px;height:34px;font-size:13px">阿</span><div><b>阿绪</b><span>普通观众 · 收藏 143 支</span></div></div>
+        </div>
+        <div class="ywb-review">
+          <p>投稿流程出乎意料地顺。上传后三天就收到编辑反馈，指出了收音和色调的问题，还给了具体修改建议。这种认真程度值得信赖。</p>
+          <div class="ywb-review__who"><span class="ywb-avatar" style="background:#7b6cf6;width:34px;height:34px;font-size:13px">许</span><div><b>许南</b><span>独立创作者 · 投稿 9 次</span></div></div>
+        </div>
+        <div class="ywb-review">
+          <p>我给女儿找舞蹈启蒙内容，这里的教学视频语速合适、动作标注清楚，还会提示保护膝盖。作为家长，我更在意这种细节。</p>
+          <div class="ywb-review__who"><span class="ywb-avatar" style="background:#5f8163;width:34px;height:34px;font-size:13px">李</span><div><b>李女士</b><span>家长用户 · 使用 1 年</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 企业动态 -->
+  <section class="ywb-section ywb-news" id="ywb-news">
+    <div class="ywb-wrap">
+      <div class="ywb-sec-head">
+        <div>
+          <span class="ywb-eyebrow">Newsroom</span>
+          <h2 class="ywb-sec-title">企业动态与官方发布</h2>
+          <p class="ywb-sec-desc">平台更新、合作进展与线下活动，都会在这里公开记录。</p>
+        </div>
+        <a class="ywb-link-more" href="#ywb-contact">媒体与合作联系</a>
+      </div>
+      <div class="ywb-news__list">
+        <article class="ywb-news__item">
+          <div class="ywb-news__date"><b>11.15</b>2026</div>
+          <div class="ywb-news__main">
+            <h3>艺舞吧创作者中心上线高清素材下载与作品集整理功能</h3>
+            <p>认证创作者可在后台统一管理成片、原始素材与授权说明，作品集页面同步升级为可分享的独立链接。</p>
+          </div>
+          <span class="ywb-news__tag">产品更新</span>
+        </article>
+        <article class="ywb-news__item">
+          <div class="ywb-news__date"><b>11.09</b>2026</div>
+          <div class="ywb-news__main">
+            <h3>年度编舞挑战第二期开启，主题为「一平方米」</h3>
+            <p>不限舞种，参赛者需在不超过一平方米的区域内完成一段完整表达。报名与投稿通道同步开启，欢迎上传作品。</p>
+          </div>
+          <span class="ywb-news__tag">比赛报名</span>
+        </article>
+        <article class="ywb-news__item">
+          <div class="ywb-news__date"><b>10.28</b>2026</div>
+          <div class="ywb-news__main">
+            <h3>与三城独立舞团达成内容合作，共建城市影像计划</h3>
+            <p>合作将覆盖联合拍摄、工作坊与年度展映，首期内容已在"城市律动"专题上线，持续更新中。</p>
+          </div>
+          <span class="ywb-news__tag">品牌合作</span>
+        </article>
+        <article class="ywb-news__item">
+          <div class="ywb-news__date"><b>10.12</b>2026</div>
+          <div class="ywb-news__main">
+            <h3>内容审核与版权规范更新，明确原创署名与授权范围</h3>
+            <p>新增作品授权模板与署名规则说明，进一步保护创作者权益，也方便机构合作方清晰查看使用范围。</p>
+          </div>
+          <span class="ywb-news__tag">官方公告</span>
+        </article>
+        <article class="ywb-news__item">
+          <div class="ywb-news__date"><b>09.20</b>2026</div>
+          <div class="ywb-news__main">
+            <h3>艺舞吧首届线下展映落幕，八城观众共同参与</h3>
+            <p>展映共放映十六支社区作品，并设置创作者映后交流。我们会在下一季继续推进线下活动，敬请关注。</p>
+          </div>
+          <span class="ywb-news__tag">社区活动</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 合作品牌 -->
+  <section class="ywb-section ywb-partners" id="ywb-partners">
+    <div class="ywb-wrap">
+      <div class="ywb-sec-head">
+        <div>
+          <span class="ywb-eyebrow">Partners</span>
+          <h2 class="ywb-sec-title">合作品牌与机构</h2>
+          <p class="ywb-sec-desc">感谢这些伙伴与我们共同推动舞蹈影像的品质与影响力。</p>
+        </div>
+      </div>
+      <div class="ywb-partners__grid">
+        <div class="ywb-partner">东岸舞团</div>
+        <div class="ywb-partner">青禾舞蹈教室</div>
+        <div class="ywb-partner">星野影像社</div>
+        <div class="ywb-partner">棱镜剧场</div>
+        <div class="ywb-partner">慢拍音乐工作室</div>
+        <div class="ywb-partner">南城艺术中心</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="ywb-section ywb-faq" id="ywb-faq">
+    <div class="ywb-wrap">
+      <div class="ywb-sec-head">
+        <div>
+          <span class="ywb-eyebrow">Help Center</span>
+          <h2 class="ywb-sec-title">常见问题</h2>
+          <p class="ywb-sec-desc">关于投稿、版权与合作，这里整理了最常见的问题。若仍有疑问，欢迎通过下方联系入口与我们沟通。</p>
+        </div>
+      </div>
+      <div class="ywb-faq__wrap">
+        <details open>
+          <summary>如何向艺舞吧投稿我的舞蹈影像作品？</summary>
+          <p>点击页面右上角"投稿"按钮即可打开投稿说明。你需要提供作品成片、创作说明、作者署名与授权确认，并选择所属舞种与题材标签。作品提交后通常在三个工作日内收到编辑反馈，反馈会包含内容建议与技术建议。</p>
+        </details>
+        <details>
+          <summary>投稿作品需要满足什么技术标准？</summary>
+          <p>建议横屏 16:9、分辨率不低于 1080P、音画同步。手机拍摄同样欢迎，但请尽量保证光线充足、主体清晰、环境噪音可控。我们不要求设备高端，更看重表达是否完整、创作是否真诚。</p>
+        </details>
+        <details>
+          <summary>作品的版权归属如何界定？</summary>
+          <p>作品版权始终归创作者所有。艺舞吧获得的是在平台内展示、推荐与专题收录的授权，范围与期限以投稿时确认的授权说明为准。任何超出展示范围的商业使用，都会另行获得创作者书面同意。</p>
+        </details>
+        <details>
+          <summary>我不是专业舞者，只是喜欢跳舞，可以加入吗？</summary>
+          <p>当然可以。艺舞吧的社区一直以"真实"为优先，我们欢迎日常记录、居家即兴、练习片段与失败复盘。平台设有新人扶持企划与基础教程分类，也在持续完善对初学者的引导内容。</p>
+        </details>
+        <details>
+          <summary>平台是否提供拍摄与剪辑方面的帮助？</summary>
+          <p>我们提供三类支持：教程类内容（光线、机位、收声、剪辑节奏）、工作坊与线上分享、以及面向认证创作者的设备与场地合作资源。具体资源清单可在创作者中心查看。</p>
+        </details>
+        <details>
+          <summary>如何申请成为认证创作者？</summary>
+          <p>持续发布原创舞蹈影像、内容质量稳定、无版权争议的创作者，可以在创作者中心提交认证申请。审核会综合内容原创度、社区互动质量与更新频率，通常每两个月集中审核一次。</p>
+        </details>
+        <details>
+          <summary>机构或品牌希望合作，应通过什么渠道联系？</summary>
+          <p>请通过下方联系区域的商务合作邮箱与我们沟通，并在邮件中说明合作类型、内容方向与预期排期。我们会在五个工作日内回复，并对可行方案提供具体的内容与传播建议。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 联系与投稿 -->
+  <section class="ywb-section ywb-contact" id="ywb-contact">
+    <div class="ywb-wrap">
+      <div class="ywb-contact__grid">
+        <div>
+          <span class="ywb-eyebrow" style="color:var(--ywb-yellow)">Join Us</span>
+          <h2>让你的身体表达，被更多人认真看见</h2>
+          <p class="ywb-contact__desc">
+            无论你是一支独舞的创作者、一个有作品的舞团，还是想把舞蹈影像做得更专业的品牌伙伴，艺舞吧都愿意成为长期合作的那一方。投稿、合作、反馈与建议，都可以从这里开始。
+          </p>
+          <div class="ywb-contact__actions">
+            <button class="ywb-btn ywb-btn--primary" id="ywb-submit-btn-2">提交作品</button>
+            <button class="ywb-btn ywb-btn--ghost" id="ywb-feedback-btn">反馈与建议</button>
+            <button class="ywb-btn ywb-btn--ghost" id="ywb-share-btn-2">分享艺舞吧</button>
+          </div>
+        </div>
+        <div class="ywb-contact__panel">
+          <h3>官方联系信息</h3>
+          <div class="ywb-contact__row"><span>商务合作</span><b>partner@yiwuba.example</b></div>
+          <div class="ywb-contact__row"><span>作品投稿</span><b>submit@yiwuba.example</b></div>
+          <div class="ywb-contact__row"><span>媒体联络</span><b>press@yiwuba.example</b></div>
+          <div class="ywb-contact__row"><span>工作时间</span><b>周一至周五 10:00 - 19:00</b></div>
+          <div class="ywb-contact__row"><span>内容反馈</span><b>页面右下角反馈入口</b></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="ywb-footer">
+  <div class="ywb-wrap">
+    <div class="ywb-footer__grid">
+      <div class="ywb-footer__brand">
+        <h3>艺舞吧</h3>
+        <p>艺舞吧官方网站 · 舞蹈影像品牌社区。我们以原创与正版为底线，以专业与匠心为标准，持续运营一个值得信赖的舞蹈内容生态，让每一段身体表达都获得应有的尊重与陪伴。</p>
+      </div>
+      <div class="ywb-footer__col">
+        <h4>浏览</h4>
+        <ul>
+          <li><a href="#ywb-feature">焦点作品</a></li>
+          <li><a href="#ywb-stream">热门视频流</a></li>
+          <li><a href="#ywb-special">专题企划</a></li>
+          <li><a href="#ywb-story">故事随笔</a></li>
+        </ul>
+      </div>
+      <div class="ywb-footer__col">
+        <h4>社区</h4>
+        <ul>
+          <li><a href="#ywb-creator">创作者矩阵</a></li>
+          <li><a href="#ywb-rank">排行榜</a></li>
+          <li><a href="#ywb-faq">帮助中心</a></li>
+          <li><a href="#ywb-contact">投稿入口</a></li>
+        </ul>
+      </div>
+      <div class="ywb-footer__col">
+        <h4>关于</h4>
+        <ul>
+          <li><a href="#ywb-about">品牌解析</a></li>
+          <li><a href="#ywb-news">企业动态</a></li>
+          <li><a href="#ywb-partners">合作品牌</a></li>
+          <li><a href="#ywb-contact">联系方式</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ywb-footer__bottom">
+      <span>© 2026 艺舞吧 · 版权所有 · 持续运营中</span>
+      <span>原创内容受版权保护 · 网站备案号：沪 ICP 备 2026000000 号</span>
+      <span>官方网站 · 品牌社区 · 内容生态</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Toast -->
+<div class="ywb-toast" id="ywb-toast" role="status" aria-live="polite"></div>
+
+<!-- 回到顶部 -->
+<button class="ywb-totop" id="ywb-totop" aria-label="回到顶部">↑</button>
+
+<!-- 弹窗：作者档案 -->
+<div class="ywb-modal" id="ywb-author-modal" role="dialog" aria-modal="true" aria-label="作者档案">
+  <div class="ywb-modal__box">
+    <button class="ywb-modal__close" data-close aria-label="关闭">✕</button>
+    <div class="ywb-author-card">
+      <div class="ywb-creator__ava" id="ywb-author-ava" style="background:linear-gradient(135deg,#161a2e,#43406e)">林</div>
+      <div>
+        <b id="ywb-author-name">林之遥</b>
+        <span>艺舞吧认证创作者</span>
+      </div>
+    </div>
+    <p class="ywb-author-desc" id="ywb-author-desc"></p>
+    <div class="ywb-author-tags" id="ywb-author-tags"></div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <button class="ywb-btn ywb-btn--primary ywb-btn--sm" data-close>知道了</button>
+      <button class="ywb-btn ywb-btn--ghost ywb-btn--sm" id="ywb-author-follow">关注创作者</button>
+    </div>
+  </div>
+</div>
+
+<!-- 弹窗：投稿 -->
+<div class="ywb-modal" id="ywb-submit-modal" role="dialog" aria-modal="true" aria-label="投稿">
+  <div class="ywb-modal__box">
+    <button class="ywb-modal__close" data-close aria-label="关闭">✕</button>
+    <h3>提交你的舞蹈影像</h3>
+    <p class="ywb-modal__sub">请填写基本信息，编辑团队会在三个工作日内通过邮件与你联系。作品版权始终归你所有。</p>
+    <div class="ywb-field">
+      <label for="ywb-f-name">创作者署名</label>
+      <input id="ywb-f-name" type="text" placeholder="例如：林之遥 / 星野影像">
+    </div>
+    <div class="ywb-field">
+      <label for="ywb-f-mail">联系邮箱</label>
+      <input id="ywb-f-mail" type="email" placeholder="用于接收编辑反馈">
+    </div>
+    <div class="ywb-field">
+      <label for="ywb-f-title">作品名称</label>
+      <input id="ywb-f-title" type="text" placeholder="例如：《练功房零点》">
+    </div>
+    <div class="ywb-field">
+      <label for="ywb-f-desc">作品简介与创作说明</label>
+      <textarea id="ywb-f-desc" placeholder="简单介绍作品的舞种、拍摄条件与你想表达的内容"></textarea>
+    </div>
+    <button class="ywb-btn ywb-btn--primary" id="ywb-submit-send" style="width:100%">提交投稿意向</button>
+  </div>
+</div>
+
+<!-- 弹窗：分享 -->
+<div class="ywb-modal" id="ywb-share-modal" role="dialog" aria-modal="true" aria-label="分享">
+  <div class="ywb-modal__box">
+    <button class="ywb-modal__close" data-close aria-label="关闭">✕</button>
+    <h3>分享艺舞吧</h3>
+    <p class="ywb-modal__sub">把喜欢的作品或品牌页分享给同样热爱舞蹈的人。</p>
+    <div class="ywb-share-row">
+      <button class="ywb-share-btn" data-share="微信">微信</button>
+      <button class="ywb-share-btn" data-share="微博">微博</button>
+      <button class="ywb-share-btn" data-share="QQ">QQ</button>
+      <button class="ywb-share-btn" data-share="豆瓣">豆瓣</button>
+    </div>
+    <div class="ywb-copylink">
+      <code id="ywb-share-link">艺舞吧 · 舞蹈影像品牌社区</code>
+      <button class="ywb-btn ywb-btn--primary ywb-btn--sm" id="ywb-copy-btn">复制</button>
+    </div>
+  </div>
+</div>
+
+<!-- 弹窗：反馈 -->
+<div class="ywb-modal" id="ywb-feedback-modal" role="dialog" aria-modal="true" aria-label="反馈">
+  <div class="ywb-modal__box">
+    <button class="ywb-modal__close" data-close aria-label="关闭">✕</button>
+    <h3>反馈与建议</h3>
+    <p class="ywb-modal__sub">你的意见会直接影响艺舞吧的内容选择与产品迭代，我们认真阅读每一条。</p>
+    <div class="ywb-field">
+      <label for="ywb-fb-type">反馈类型</label>
+      <input id="ywb-fb-type" type="text" placeholder="内容建议 / 播放问题 / 版权反馈 / 其他">
+    </div>
+    <div class="ywb-field">
+      <label for="ywb-fb-text">具体描述</label>
+      <textarea id="ywb-fb-text" placeholder="请尽量具体描述你遇到的问题或想法"></textarea>
+    </div>
+    <button class="ywb-btn ywb-btn--primary" id="ywb-feedback-send" style="width:100%">提交反馈</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  'use strict';
+
+  var toastEl = document.getElementById('ywb-toast');
+  var toastTimer = null;
+  function toast(msg){
+    if(!toastEl) return;
+    toastEl.textContent = msg;
+    toastEl.classList.add('is-on');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toastEl.classList.remove('is-on'); }, 2200);
+  }
+
+  /* 移动端导航 */
+  var navToggle = document.getElementById('ywb-nav-toggle');
+  var nav = document.getElementById('ywb-nav');
+  if(navToggle && nav){
+    navToggle.addEventListener('click', function(){
+      var open = nav.classList.toggle('is-open');
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      navToggle.setAttribute('aria-label', open ? '收起导航' : '展开导航');
+    });
+    nav.addEventListener('click', function(e){
+      if(e.target.tagName === 'A'){
+        nav.classList.remove('is-open');
+        navToggle.setAttribute('aria-expanded','false');
+      }
+    });
+  }
+
+  /* 平滑滚动（含吸顶偏移） */
+  var stickyShell = document.querySelector('.ywb-sticky-shell');
+  function scrollToId(id){
+    var target = document.querySelector(id);
+    if(!target) return;
+    var offset = stickyShell ? stickyShell.offsetHeight : 0;
+    var top = target.getBoundingClientRect().top + window.pageYOffset - offset - 10;
+    window.scrollTo({ top: Math.max(top, 0), behavior: 'smooth' });
+  }
+  document.querySelectorAll('[data-scroll]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      scrollToId(btn.getAttribute('data-scroll'));
+    });
+  });
+  document.querySelectorAll('.ywb-nav a[href^="#"], .ywb-footer a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var href = a.getAttribute('href');
+      if(href && href.length > 1){
+        e.preventDefault();
+        scrollToId(href);
+        history.replaceState(null, '', href);
+      }
+    });
+  });
+
+  /* 搜索反馈 */
+  var searchInput = document.getElementById('ywb-search-input');
+  var searchBtn = document.getElementById('ywb-search-btn');
+  var searchTip = document.getElementById('ywb-search-tip');
+  var searchTimer = null;
+  function doSearch(){
+    var kw = (searchInput.value || '').trim();
+    if(!kw){
+      searchTip.textContent = '可试试：现代舞、国风、街舞、剪辑教程';
+      searchTip.classList.add('is-on');
+      return;
+    }
+    var hit = 0;
+    document.querySelectorAll('#ywb-stream-grid .ywb-vcard').forEach(function(card){
+      var text = card.textContent;
+      if(text.indexOf(kw) > -1){ hit++; }
+    });
+    if(hit > 0){
+      searchTip.textContent = '在热门视频流中找到 ' + hit + ' 条与「' + kw + '」相关的内容';
+      scrollToId('#ywb-stream');
+    } else {
+      searchTip.textContent = '暂未匹配到「' + kw + '」，可换关键词或查看专题企划';
+    }
+    searchTip.classList.add('is-on');
+    clearTimeout(searchTimer);
+    searchTimer = setTimeout(function(){ searchTip.classList.remove('is-on'); }, 3600);
+  }
+  if(searchBtn) searchBtn.addEventListener('click', doSearch);
+  if(searchInput){
+    searchInput.addEventListener('keydown', function(e){
+      if(e.key === 'Enter'){ e.preventDefault(); doSearch(); }
+    });
+    searchInput.addEventListener('focus', function(){
+      searchTip.textContent = '按回车搜索，支持舞种、作者与专题关键词';
+      searchTip.classList.add('is-on');
+    });
+    searchInput.addEventListener('blur', function(){
+      setTimeout(function(){ searchTip.classList.remove('is-on'); }, 180);
+    });
+  }
+
+  /* 数字滚动 */
+  var counted = false;
+  function runCount(){
+    if(counted) return;
+    counted = true;
+    document.querySelectorAll('[data-count]').forEach(function(el){
+      var target = parseInt(el.getAttribute('data-count'), 10) || 0;
+      var small = el.querySelector('small');
+      var suffix = small ? small.outerHTML : '';
+      var start = null;
+      var dur = 1300;
+      function step(ts){
+        if(!start) start = ts;
+        var p = Math.min((ts - start) / dur, 1);
+        var eased = 1 - Math.pow(1 - p, 3);
+        var val = Math.floor(target * eased);
+        el.innerHTML = (target >= 10000 ? (val/10000).toFixed(1) + '万' : val) + suffix;
+        if(p < 1) requestAnimationFrame(step);
+        else el.innerHTML = (target >= 10000 ? (target/10000).toFixed(1) + '万' : target) + suffix;
+      }
+      requestAnimationFrame(step);
+    });
+  }
+  var heroStats = document.querySelector('.ywb-hero__stats');
+  if(heroStats){
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(en){ if(en.isIntersecting){ runCount(); io.disconnect(); } });
+      }, { threshold: 0.3 });
+      io.observe(heroStats);
+    } else {
+      runCount();
+    }
+  }
+
+  /* 点赞 / 收藏 */
+  document.querySelectorAll('.ywb-like-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var numEl = btn.querySelector('.ywb-like-num');
+      var n = parseInt(numEl.textContent, 10) || 0;
+      var liked = btn.classList.toggle('is-liked');
+      numEl.textContent = liked ? n + 1 : Math.max(n - 1, 0);
+      toast(liked ? '已点赞，感谢你的支持' : '已取消点赞');
+    });
+  });
+  document.querySelectorAll('.ywb-save-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var on = btn.classList.toggle('is-saved');
+      toast(on ? '已收藏到你的浏览器清单' : '已取消收藏');
+    });
+  });
+
+  /* 标签筛选 */
+  var filterBar = document.getElementById('ywb-filter-bar');
+  if(filterBar){
+    filterBar.addEventListener('click', function(e){
+      var btn = e.target.closest('.ywb-filter');
+      if(!btn) return;
+      filterBar.querySelectorAll('.ywb-filter').forEach(function(b){ b.classList.remove('is-active'); });
+      btn.classList.add('is-active');
+      var f = btn.getAttribute('data-filter');
+      document.querySelectorAll('#ywb-stream-grid .ywb-vcard').forEach(function(card){
+        var cat = card.getAttribute('data-cat') || '';
+        card.style.display = (f === 'all' || cat === f) ? '' : 'none';
+      });
+      toast(f === 'all' ? '已显示全部题材' : '已筛选：' + btn.textContent);
+    });
+  }
+
+  /* 通用弹窗 */
+  function openModal(id){
+    var m = document.getElementById(id);
+    if(m) m.classList.add('is-on');
+  }
+  function closeModal(m){
+    if(m) m.classList.remove('is-on');
+  }
+  document.querySelectorAll('.ywb-modal').forEach(function(m){
+    m.addEventListener('click', function(e){
+      if(e.target === m || e.target.closest('[data-close]')) closeModal(m);
+    });
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      document.querySelectorAll('.ywb-modal.is-on').forEach(closeModal);
+    }
+  });
+
+  /* 作者档案 */
+  var authorModal = document.getElementById('ywb-author-modal');
+  document.querySelectorAll('[data-author]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var parts = btn.getAttribute('data-author').split('|');
+      var name = parts[0] || '创作者';
+      var desc = parts[1] || '';
+      var tags = (parts[2] || '').split('·').filter(function(s){ return s.trim(); });
+      document.getElementById('ywb-author-name').textContent = name;
+      document.getElementById('ywb-author-desc').textContent = desc;
+      var ava = document.getElementById('ywb-author-ava');
+      ava.textContent = name.charAt(0);
+      var tagBox = document.getElementById('ywb-author-tags');
+      tagBox.innerHTML = '';
+      tags.forEach(function(t){
+        var s = document.createElement('span');
+        s.className = 'ywb-tag';
+        s.textContent = t.trim();
+        tagBox.appendChild(s);
+      });
+      openModal('ywb-author-modal');
+    });
+  });
+  var followBtn = document.getElementById('ywb-author-follow');
+  if(followBtn){
+    followBtn.addEventListener('click', function(){
+      var on = followBtn.getAttribute('data-follow') === '1';
+      followBtn.setAttribute('data-follow', on ? '0' : '1');
+      followBtn.textContent = on ? '关注创作者' : '已关注';
+      toast(on ? '已取消关注' : '关注成功，将在动态中看到 TA 的更新');
+    });
+  }
+
+  /* 投稿 */
+  ['ywb-submit-btn','ywb-submit-btn-2'].forEach(function(id){
+    var b = document.getElementById(id);
+    if(b) b.addEventListener('click', function(){ openModal('ywb-submit-modal'); });
+  });
+  var submitSend = document.getElementById('ywb-submit-send');
+  if(submitSend){
+    submitSend.addEventListener('click', function(){
+      var name = document.getElementById('ywb-f-name').value.trim();
+      var mail = document.getElementById('ywb-f-mail').value.trim();
+      var title = document.getElementById('ywb-f-title').value.trim();
+      if(!name || !mail || !title){
+        toast('请至少填写署名、邮箱与作品名称');
+        return;
+      }
+      if(mail.indexOf('@') === -1){
+        toast('邮箱格式看起来不太对，请检查一下');
+        return;
+      }
+      closeModal(document.getElementById('ywb-submit-modal'));
+      toast('投稿意向已提交，编辑团队会尽快联系你');
+      document.getElementById('ywb-f-name').value = '';
+      document.getElementById('ywb-f-mail').value = '';
+      document.getElementById('ywb-f-title').value = '';
+      document.getElementById('ywb-f-desc').value = '';
+    });
+  }
+
+  /* 分享 */
+  ['ywb-share-btn','ywb-share-btn-2'].forEach(function(id){
+    var b = document.getElementById(id);
+    if(b) b.addEventListener('click', function(){ openModal('ywb-share-modal'); });
+  });
+  document.querySelectorAll('[data-share]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      toast('已准备好分享到' + btn.getAttribute('data-share') + '，请复制链接后粘贴');
+    });
+  });
+  var copyBtn = document.getElementById('ywb-copy-btn');
+  if(copyBtn){
+    copyBtn.addEventListener('click', function(){
+      var link = '艺舞吧 · 舞蹈影像品牌社区';
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(link).then(function(){
+          toast('链接已复制到剪贴板');
+        }).catch(function(){
+          toast('复制失败，请手动选择链接文本');
+        });
+      } else {
+        var code = document.getElementById('ywb-share-link');
+        var range = document.createRange();
+        range.selectNodeContents(code);
+        var sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(range);
+        toast('已选中链接文本，请手动复制');
+      }
+    });
+  }
+
+  /* 反馈 */
+  var feedbackBtn = document.getElementById('ywb-feedback-btn');
+  if(feedbackBtn) feedbackBtn.addEventListener('click', function(){ openModal('ywb-feedback-modal'); });
+  var feedbackSend = document.getElementById('ywb-feedback-send');
+  if(feedbackSend){
+    feedbackSend.addEventListener('click', function(){
+      var type = document.getElementById('ywb-fb-type').value.trim();
+      var text = document.getElementById('ywb-fb-text').value.trim();
+      if(!type || !text){
+        toast('请填写反馈类型与描述');
+        return;
+      }
+      closeModal(document.getElementById('ywb-feedback-modal'));
+      toast('反馈已提交，感谢你帮助艺舞吧做得更好');
+      document.getElementById('ywb-fb-type').value = '';
+      document.getElementById('ywb-fb-text').value = '';
+    });
+  }
+
+  /* 回到顶部 */
+  var toTop = document.getElementById('ywb-totop');
+  if(toTop){
+    window.addEventListener('scroll', function(){
+      if(window.pageYOffset > 520) toTop.classList.add('is-on');
+      else toTop.classList.remove('is-on');
+    }, { passive: true });
+    toTop.addEventListener('click', function(){
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+})();
+</script>
+</body>
+              </html>
